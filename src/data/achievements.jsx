@@ -41,7 +41,7 @@ export const achievements = [
 },
 
   // EXAMPLE 1 - Online Course Certification
- /* {
+ /*{
     id: 'react-course',
     type: 'certification',
     title: 'React - The Complete Guide',
@@ -113,7 +113,7 @@ export const achievements = [
     //image: '/achievements/git-cert.png',
     skills: ['Git', 'GitHub', 'Version Control', 'Collaboration'],
     featured: false,
-  }, */
+  },
 
   // EXAMPLE 6 - Project Metric Achievement
   /*{

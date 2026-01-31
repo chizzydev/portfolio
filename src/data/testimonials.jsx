@@ -23,7 +23,7 @@ export const testimonials = [
   // PLACEHOLDER 1 - Mentor/Instructor testimonial
   {
     id: 'mentor-testimonial',
-    name: 'John Doe',
+    name: 'Michael John',
     role: 'Senior Developer',
     company: 'Tech Company',
     relationship: 'mentor',
