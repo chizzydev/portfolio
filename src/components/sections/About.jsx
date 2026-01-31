@@ -58,7 +58,7 @@ const About = () => {
         <div className="grid sm:grid-cols-2 gap-8 sm:gap-10 md:gap-12 items-start">
           {/* Left Side - Image/Visual */}
           <AnimatedSection animation="fade-right">
-            <div className="relative max-w-md mx-auto">
+            <div className="relative max-w-md mx-auto pt-8 sm:pt-12 md:pt-16">
               {/* Placeholder for profile image or illustration */}
               <div className="aspect-square rounded-2xl overflow-hidden bg-gradient-to-br from-primary-500 to-accent-500 p-1">
                 <div className="w-full h-full rounded-2xl bg-light-card dark:bg-dark-card flex items-center justify-center">

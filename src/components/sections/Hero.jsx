@@ -46,9 +46,9 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative min-h-[calc(100vh-5rem)] md:min-h-[85vh] lg:min-h-screen flex items-center justify-center overflow-hidden bg-light-bg dark:bg-dark-bg">
-      {/* Background Decorations */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+   <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-light-bg dark:bg-dark-bg">
+{/* Background Decorations */}
+<div className="absolute inset-0 overflow-hidden pointer-events-none">
         {/* Gradient Orbs */}
         <div className="absolute top-1/4 -left-48 w-96 h-96 bg-primary-500/20 dark:bg-primary-500/10 rounded-full blur-3xl animate-pulse-slow" />
         <div className="absolute bottom-1/4 -right-48 w-96 h-96 bg-accent-500/20 dark:bg-accent-500/10 rounded-full blur-3xl animate-pulse-slow animation-delay-400" />

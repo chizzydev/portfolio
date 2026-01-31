@@ -56,45 +56,51 @@ function App() {
       <Navbar theme={theme} toggleTheme={toggleTheme} />
 
       {/* Main Content */}
-     <main className="pt-20">
+      <main>
         {/* Hero Section - Landing page */}
+        <section id="home">
+          <Hero />
+        </section>
 
-<section id="home" className="section-hero">
-  <Hero />
-</section>
+        {/* About Section */}
+        <section id="about">
+          <About />
+        </section>
 
-<section id="about" className="section-about">
-  <About />
-</section>
+        {/* Tech Stack Section */}
+        <section id="tech-stack">
+          <TechStack />
+        </section>
 
-<section id="tech-stack" className="section-tech">
-  <TechStack />
-</section>
+        {/* Experience Section */}
+        <section id="experience">
+          <Experience />
+        </section>
 
-<section id="experience" className="section-experience">
-  <Experience />
-</section>
+        {/* Projects Section */}
+        <section id="projects">
+          <Projects />
+        </section>
 
-<section id="projects" className="section-projects">
-  <Projects />
-</section>
+        {/* Services Section (Optional - can be hidden) */}
+        <section id="services">
+          <Services />
+        </section>
 
-<section id="services" className="section-services">
-  <Services />
-</section>
+        {/* Achievements Section */}
+        <section id="achievements">
+          <Achievements />
+        </section>
 
-<section id="achievements" className="section-achievements">
-  <Achievements />
-</section>
+        {/* Testimonials Section */}
+        <section id="testimonials">
+          <Testimonials />
+        </section>
 
-<section id="testimonials" className="section-testimonials">
-  <Testimonials />
-</section>
-
-<section id="contact" className="section-contact">
-  <Contact />
-</section>
-
+        {/* Contact Section */}
+        <section id="contact">
+          <Contact />
+        </section>
       </main>
 
       {/* Footer */}
