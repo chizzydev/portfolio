@@ -5,37 +5,25 @@ import { PERSONAL_INFO } from '../../utils/constants';
 import { getSocialLinkById } from '../../data/social';
 import { featuredTech } from '../../data/techStack';
 
-/**
- * Hero Component
- * Landing section with introduction and CTAs
- */
-
 const Hero = () => {
-  // Get specific social links
   const githubLink = getSocialLinkById('github');
   const linkedinLink = getSocialLinkById('linkedin');
 
-  // Scroll to contact section
   const scrollToContact = () => {
     const element = document.getElementById('contact');
     if (!element) return;
-
     const offset = 80;
     const elementPosition = element.getBoundingClientRect().top;
     const offsetPosition = elementPosition + window.pageYOffset - offset;
-
     window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
   };
 
-  // Scroll to projects section
   const scrollToProjects = () => {
     const element = document.getElementById('projects');
     if (!element) return;
-
     const offset = 80;
     const elementPosition = element.getBoundingClientRect().top;
     const offsetPosition = elementPosition + window.pageYOffset - offset;
-
     window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
   };
 
@@ -45,24 +33,21 @@ const Hero = () => {
       className="
         relative overflow-hidden
         bg-light-bg dark:bg-dark-bg
-        min-h-[calc(100vh-5rem)]
+        min-h-screen
         flex items-center
       "
     >
       {/* Background Decorations */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        {/* Gradient Orbs */}
         <div className="absolute top-1/4 -left-48 w-96 h-96 bg-primary-500/20 dark:bg-primary-500/10 rounded-full blur-3xl animate-pulse-slow" />
         <div className="absolute bottom-1/4 -right-48 w-96 h-96 bg-accent-500/20 dark:bg-accent-500/10 rounded-full blur-3xl animate-pulse-slow animation-delay-400" />
-
-        {/* Grid Pattern */}
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:4rem_4rem]" />
       </div>
 
       {/* Content */}
-      <div className="container-custom relative z-10 py-20 md:py-24 lg:py-28">
+      <div className="container-custom relative z-10 py-12 md:py-16 lg:py-20">
         <div className="max-w-5xl mx-auto text-center space-y-8 animate-fade-up">
-          
+
           {/* Greeting Badge */}
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary-100 dark:bg-primary-900/30 border border-primary-200 dark:border-primary-800 text-primary-700 dark:text-primary-300 text-sm font-medium">
             <span className="relative flex h-2 w-2">
@@ -80,7 +65,6 @@ const Hero = () => {
                 {PERSONAL_INFO.name.split(' ')[0]}
               </span>
             </h1>
-
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold text-light-text-secondary dark:text-dark-text-secondary">
               {PERSONAL_INFO.title}
             </h2>
@@ -92,7 +76,7 @@ const Hero = () => {
           </p>
 
           {/* Featured Tech */}
-          <div className="flex flex-wrap justify-center gap-3 pt-4">
+          <div className="flex flex-wrap justify-center gap-3">
             {featuredTech.map((tech) => (
               <span
                 key={tech}
@@ -104,7 +88,7 @@ const Hero = () => {
           </div>
 
           {/* CTAs */}
-          <div className="flex flex-col sm:flex-row justify-center gap-4 pt-8">
+          <div className="flex flex-col sm:flex-row justify-center gap-4 pt-6">
             <Button
               variant="primary"
               size="lg"
@@ -134,11 +118,10 @@ const Hero = () => {
           </div>
 
           {/* Social Links */}
-          <div className="flex items-center justify-center gap-4 pt-8">
+          <div className="flex items-center justify-center gap-4 pt-6">
             <p className="text-sm text-light-text-tertiary dark:text-dark-text-tertiary">
               Connect with me:
             </p>
-
             <div className="flex gap-3">
               {githubLink && (
                 <a
@@ -151,7 +134,6 @@ const Hero = () => {
                   <Github className="w-5 h-5" />
                 </a>
               )}
-
               {linkedinLink && (
                 <a
                   href={linkedinLink.url}
@@ -167,11 +149,12 @@ const Hero = () => {
           </div>
 
           {/* Scroll Indicator */}
-          <div className="pt-10 animate-bounce">
+          <div className="pt-6 animate-bounce">
             <div className="w-6 h-10 mx-auto border-2 border-primary-500 dark:border-primary-400 rounded-full p-1">
               <div className="w-1 h-3 bg-primary-500 dark:bg-primary-400 rounded-full mx-auto animate-pulse" />
             </div>
           </div>
+
         </div>
       </div>
     </section>

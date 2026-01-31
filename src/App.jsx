@@ -56,11 +56,9 @@ function App() {
       <Navbar theme={theme} toggleTheme={toggleTheme} />
 
       {/* Main Content */}
-     <main className="pt-20">
+     <main>
         {/* Hero Section - Landing page */}
-       <section id="home" className="section-hero">
-  <Hero />
-</section>
+         <Hero />
 
 <section id="about" className="section-about">
   <About />
