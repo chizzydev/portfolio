@@ -46,7 +46,18 @@ const Hero = () => {
   };
 
   return (
-  <section className="relative min-h-[calc(100vh-5rem)] md:min-h-[85vh] lg:min-h-screen flex items-center justify-center overflow-hidden bg-light-bg dark:bg-dark-bg">
+ <section
+  className="relative
+    flex items-center justify-center
+    overflow-hidden
+    bg-light-bg dark:bg-dark-bg
+    min-h-[calc(100svh-5rem)]
+    md:min-h-[85vh]
+    lg:min-h-screen
+    pt-24
+    md:pt-0
+  "
+>
       {/* Background Decorations */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         {/* Gradient Orbs */}
