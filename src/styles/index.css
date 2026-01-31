@@ -87,17 +87,28 @@
   }
 }
 
-/* Components layer - Reusable component styles */
+/* Components layer - Reusable component styles */ 
 @layer components {
   /* Container with max-width */
   .container-custom {
     @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
   }
-
-  /* Section padding */
-  .section-padding {
-    @apply py-16 md:py-24 lg:py-32;
+/* Hero section */
+.section-hero {
+   @apply pt-2 pb-2 md:pt-2 md:pb-2 lg:pt-2 lg:pb-2;
   }
+  /* Other sections */
+  .section-about,
+  .section-tech,
+  .section-experience,
+  .section-projects,
+  .section-services,
+  .section-achievements,
+  .section-testimonials,
+  .section-contact {
+    @apply pt-12 pb-12 md:pt-16 md:pb-16 lg:pt-20 lg:pb-20;
+  }
+
 
   /* Card styles */
   .card {

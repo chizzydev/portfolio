@@ -47,16 +47,9 @@ const Hero = () => {
 
   return (
  <section
-  className="
-    relative
-    flex items-center justify-center
-    overflow-hidden
-    bg-light-bg dark:bg-dark-bg
-
-    py-24
-    md:min-h-[85vh]
-    lg:min-h-screen
-  "
+  className="relative flex items-center justify-center overflow-hidden
+             bg-light-bg dark:bg-dark-bg
+             py-24 md:min-h-[85vh] lg:min-h-screen"
 >
       {/* Background Decorations */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
