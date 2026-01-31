@@ -72,26 +72,29 @@ const TechStack = () => {
 
         {/* ✅ THIS IS THE FIX */}
         <AnimatedSection>
-         <StaggeredList
-  staggerDelay={100}
-  className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 justify-items-center"
->
-            {techStackByCategory[activeCategory].map((tech) => (
-              <Card
+         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-fr">
+            {techStackByCategory[activeCategory].map((tech, index) => (
+              <AnimatedSection
                 key={tech.id}
-                hoverable
-                className="w-full max-w-md"
+                animation="fade-up"
+                delay={index * 100}
+                threshold={0.1}
+                className="flex"
               >
-                <div className="p-5">
+                <Card
+                  hoverable
+                  className="w-full flex flex-col"
+                >
+                <div className="p-5 flex flex-col flex-1">
                   <h4 className="text-lg font-semibold mb-2">
                     {tech.name}
                   </h4>
 
-                  <p className="text-sm text-light-text-secondary mb-4">
+                  <p className="text-sm text-light-text-secondary mb-4 flex-grow">
                     {tech.description}
                   </p>
 
-                  <div className="flex items-center gap-3">
+                  <div className="flex items-center gap-3 mt-auto">
                     <Badge
                       size="sm"
                       variant={
@@ -116,8 +119,9 @@ const TechStack = () => {
                   </div>
                 </div>
               </Card>
+              </AnimatedSection>
             ))}
-          </StaggeredList>
+          </div>
         </AnimatedSection>
 
       </div>
@@ -126,7 +130,3 @@ const TechStack = () => {
 };
 
 export default TechStack;
-
-
-
-

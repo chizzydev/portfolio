@@ -93,10 +93,6 @@
   .container-custom {
     @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
   }
-/* Hero section */
-.section-hero {
-   @apply pt-2 pb-2 md:pt-2 md:pb-2 lg:pt-2 lg:pb-2;
-  }
   /* Other sections */
   .section-about,
   .section-tech,

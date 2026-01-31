@@ -142,6 +142,7 @@ export const StaggeredList = ({
           animation={animation}
           delay={index * staggerDelay}
           threshold={threshold}
+          className="h-full"
         >
           {child}
         </AnimatedSection>
