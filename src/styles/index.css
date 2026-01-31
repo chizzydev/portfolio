@@ -10,6 +10,16 @@
 
 /* Base layer - Global resets and defaults */
 @layer base {
+  /* Prevent horizontal overflow */
+  html, body {
+    @apply overflow-x-hidden w-full;
+    position: relative;
+  }
+
+  #root {
+    @apply overflow-x-hidden w-full;
+  }
+
   * {
     @apply border-border;
   }
