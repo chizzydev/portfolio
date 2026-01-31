@@ -46,9 +46,9 @@ const Hero = () => {
   };
 
   return (
-   <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-light-bg dark:bg-dark-bg">
-{/* Background Decorations */}
-<div className="absolute inset-0 overflow-hidden pointer-events-none">
+   <section className="relative min-h-[calc(100vh-5rem)] sm:min-h-[80vh] md:min-h-[85vh] lg:min-h-screen flex items-center justify-center overflow-hidden bg-light-bg dark:bg-dark-bg">
+      {/* Background Decorations */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
         {/* Gradient Orbs */}
         <div className="absolute top-1/4 -left-48 w-96 h-96 bg-primary-500/20 dark:bg-primary-500/10 rounded-full blur-3xl animate-pulse-slow" />
         <div className="absolute bottom-1/4 -right-48 w-96 h-96 bg-accent-500/20 dark:bg-accent-500/10 rounded-full blur-3xl animate-pulse-slow animation-delay-400" />
@@ -160,13 +160,6 @@ const Hero = () => {
                     <Linkedin className="w-5 h-5" />
                   </a>
                 )}
-              </div>
-            </div>
-
-            {/* Scroll Indicator */}
-            <div className="pt-12 animate-bounce">
-              <div className="w-6 h-10 mx-auto border-2 border-primary-500 dark:border-primary-400 rounded-full p-1">
-                <div className="w-1 h-3 bg-primary-500 dark:bg-primary-400 rounded-full mx-auto animate-pulse" />
               </div>
             </div>
           </div>
