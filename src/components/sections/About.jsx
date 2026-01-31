@@ -43,7 +43,7 @@ const About = () => {
   ];
 
   return (
-    <section className="section-padding bg-light-bg dark:bg-dark-bg">
+    <section className="section-padding pt-8 md:pt-24 bg-light-bg dark:bg-dark-bg">
       <div className="container-custom">
         {/* Section Title */}
         <AnimatedSection>
