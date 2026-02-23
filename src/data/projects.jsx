@@ -1,103 +1,67 @@
-// Projects data configuration
-// This is a PLACEHOLDER structure - you'll add your real projects here later
-
-/**
- * Project data structure
- * Each project includes:
- * - id: Unique identifier
- * - title: Project name
- * - description: Brief project description
- * - longDescription: Detailed description for project modal
- * - category: Project category (for filtering)
- * - image: Project screenshot/thumbnail (path to public/projects/)
- * - techStack: Array of technologies used
- * - features: Key features/accomplishments
- * - challenges: Challenges faced and solutions (optional)
- * - links: Live demo and GitHub links
- * - date: Project completion date
- * - featured: Whether to feature this project
- * - status: Project status (completed, in-progress, planned)
- */
-
 export const projects = [
   // EXAMPLE PROJECT 1 - Admin Dashboard (Your existing project)
-  {
-    id: 'admin-dashboard',
-    title: 'Admin Dashboard',
-    description: 'Full-featured admin dashboard with authentication, CRUD operations, and responsive design.',
-    longDescription: 'A comprehensive admin dashboard built with React and Tailwind CSS featuring user authentication, role-based access control, and multiple management modules. The dashboard includes email management, user management, file storage, database monitoring, and real-time messaging system. Built with clean architecture following senior-level development practices.',
-    category: 'web-app',
-    //image: '/projects/admin-dashboard.png', // Add your screenshot to public/projects/
-    techStack: ['React', 'Vite', 'Tailwind CSS', 'JavaScript', 'Local Storage'],
-    features: [
-      'User authentication with protected routes',
-      'Dashboard analytics with stats cards',
-      'Email management system with CRUD operations',
-      'User management with role-based permissions',
-      'File storage and management interface',
-      'Database monitoring dashboard',
-      'Real-time messaging system',
-      'Fully responsive design (mobile-first)',
-      'Dark/Light theme support',
-      'Clean component architecture',
-    ],
-    challenges: [
-      {
-        problem: 'State management across multiple modules',
-        solution: 'Implemented custom hooks for shared state and localStorage persistence',
-      },
-      {
-        problem: 'Complex nested routing structure',
-        solution: 'Created reusable ProtectedRoute component and centralized route configuration',
-      },
-    ],
-    links: {
-      live: '', // Add when you deploy
-      github: '', // Add your GitHub repo link
-      demo: '', // Optional: video demo link
+ {
+  id: 'ecommerce-store',
+  title: 'Full-Stack E-Commerce Platform',
+  description: 'Production-ready multi-currency e-commerce store with dual payment integration (Stripe & Flutterwave), admin dashboard, and real-time inventory management.',
+  longDescription: 'A comprehensive e-commerce platform built for the Nigerian market with international reach. Features include automatic currency detection across 7 currencies with live exchange rates, dual payment gateway integration for both local and international transactions, complete admin panel for product and order management, user authentication with password reset, product reviews and ratings system, and wishlist functionality. Built with modern technologies and deployed on Vercel with PostgreSQL database hosted on Supabase.',
+  category: 'web-app',
+  image: 'images/projects/ecommerce-store.png', // Add your screenshot
+  techStack: [
+    'Next.js 16',
+    'TypeScript',
+    'PostgreSQL',
+    'Prisma ORM',
+    'NextAuth.js',
+    'Stripe',
+    'Flutterwave',
+    'Redis',
+    'Tailwind CSS',
+    'Shadcn/ui',
+    'Resend',
+    'UploadThing',
+  ],
+  features: [
+    'Multi-currency support (NGN, USD, GBP, EUR, GHS, KES, ZAR) with auto-detection',
+    'Dual payment integration: Stripe for international, Flutterwave for Nigerian payments',
+    'Complete admin dashboard with analytics, order management, and product CRUD',
+    'User authentication with password reset via email',
+    'Product reviews and 5-star rating system with admin moderation',
+    'Wishlist and shopping cart with persistent sessions',
+    'Real-time inventory tracking and stock management',
+    'Image upload system with UploadThing integration',
+    'Responsive design optimized for mobile, tablet, and desktop',
+    'Email notifications for orders and password resets',
+  ],
+  challenges: [
+    {
+      problem: 'Database connection pool exhaustion in serverless environment causing 500 errors',
+      solution: 'Implemented PgBouncer transaction pooling (port 6543) with connection limiting and optimized Prisma client singleton pattern for serverless functions',
     },
-    date: '2026-01',
-    featured: true,
-    status: 'in-progress',
-  },
-
-  // EXAMPLE PROJECT 2 - Portfolio Website (This project!)
-  {
-    id: 'portfolio-website',
-    title: 'Portfolio Website',
-    description: 'Personal portfolio website showcasing projects, skills, and professional experience.',
-    longDescription: 'A modern, responsive portfolio website built with React, Vite, and Tailwind CSS. Features smooth scrolling, dark/light mode, animated sections, and a working contact form. Designed with performance, accessibility, and SEO in mind following industry best practices.',
-    category: 'web-app',
-    //image: '/projects/portfolio.png', // Add your screenshot
-    techStack: ['React', 'Vite', 'Tailwind CSS', 'JavaScript', 'EmailJS'],
-    features: [
-      'Single-page application with smooth scroll navigation',
-      'Dark/Light theme with system preference detection',
-      'Responsive design (mobile-first approach)',
-      'Animated sections with Intersection Observer',
-      'Working contact form with email integration',
-      'Project filtering by category',
-      'Downloadable resume',
-      'SEO optimized',
-      'Fast performance (Lighthouse 90+ scores)',
-    ],
-    challenges: [
-      {
-        problem: 'Implementing smooth scroll animations without janky performance',
-        solution: 'Used Intersection Observer API with optimized CSS animations',
-      },
-    ],
-    links: {
-      live: '', // Add when deployed
-      github: '', // Add your repo
-      demo: '',
+    {
+      problem: 'Middleware bundle size exceeded Vercel Edge Function limit (1MB) blocking deployment',
+      solution: 'Removed middleware entirely and implemented page-level authentication guards using server-side session checks in Next.js layouts',
     },
-    date: '2026-01',
-    featured: true,
-    status: 'in-progress',
+    {
+      problem: 'Multi-currency pricing with real-time exchange rates without external API costs',
+      solution: 'Built client-side currency detection with localStorage caching and 24-hour auto-refresh using free exchangerate-api.com, with fallback to hardcoded rates',
+    },
+    {
+      problem: 'Supabase API exposing all database tables publicly without Row Level Security',
+      solution: 'Disabled Supabase auto-generated REST API and relied solely on Prisma direct PostgreSQL connections for secure data access',
+    },
+  ],
+  links: {
+    live: 'https://ecommerce-store-chi-ashy.vercel.app',
+    github: 'https://github.com/chizzydev/ecommerce-store',
+    demo: '', 
   },
+  date: '2026-02',
+  featured: true, 
+  status: 'completed',
+},
 
-  // PLACEHOLDER PROJECT 3 - You'll replace this with a real project
+  // PLACEHOLDER PROJECT 2 - To be replace this with a real project
   /** {
     id: 'project-3',
     title: 'Your Next Project',
@@ -126,36 +90,9 @@ export const projects = [
     date: '2025-02',
     featured: false,
     status: 'planned',
-  },
-
-  // PLACEHOLDER PROJECT 4
-  /** {
-    id: 'project-4',
-    title: 'Another Project',
-    description: 'Another project placeholder - replace with your real project',
-    longDescription: 'Detailed description of this project.',
-    category: 'ui-component',
-    image: '/projects/project-4.png',
-    techStack: ['React', 'CSS3'],
-    features: [
-      'Feature 1',
-      'Feature 2',
-    ],
-    challenges: [],
-    links: {
-      live: '',
-      github: '',
-      demo: '',
-    },
-    date: '2025-03',
-    featured: false,
-    status: 'planned',
   }, */
 ];
 
-/**
- * Projects organized by category
- */
 export const projectsByCategory = {
   all: projects,
   'web-app': projects.filter(p => p.category === 'web-app'),

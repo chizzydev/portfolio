@@ -3,7 +3,6 @@ import { useEffect, useState } from 'react';
 
 // Layout components
 import Navbar from './components/layout/Navbar';
-import Footer from './components/layout/Footer';
 
 // Section components
 import Hero from './components/sections/Hero';
@@ -96,9 +95,6 @@ function App() {
 </section>
 
       </main>
-
-      {/* Footer */}
-      <Footer />
 
       {/* Scroll to Top Button */}
       <ScrollToTop />
