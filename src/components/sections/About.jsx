@@ -8,13 +8,7 @@ import { PERSONAL_INFO } from '../../utils/constants';
 import { experienceStats } from '../../data/experience';
 import { projectStats } from '../../data/projects';
 
-/**
- * About Component
- * Personal story, background, and key highlights
- */
-
 const About = () => {
-  // Key highlights/stats
   const highlights = [
     {
       icon: Code2,
@@ -45,7 +39,6 @@ const About = () => {
   return (
     <section className="section-padding bg-light-bg dark:bg-dark-bg">
       <div className="container-custom">
-        {/* Section Title */}
         <AnimatedSection>
           <SectionTitle
             title="About Me"
@@ -62,7 +55,6 @@ const About = () => {
               {/* Placeholder for profile image or illustration */}
               <div className="aspect-square rounded-2xl overflow-hidden bg-gradient-to-br from-primary-500 to-accent-500 p-1">
                 <div className="w-full h-full rounded-2xl bg-light-card dark:bg-dark-card flex items-center justify-center">
-                  {/* You can replace this with an actual image */}
                   <div className="text-center p-4 sm:p-6 md:p-8">
                     <div className="w-20 h-20 sm:w-24 sm:h-24 md:w-32 md:h-32 mx-auto rounded-full bg-gradient-to-br from-primary-500 to-accent-500 flex items-center justify-center mb-3 sm:mb-4">
                       <span className="text-3xl sm:text-4xl md:text-6xl font-bold text-white">

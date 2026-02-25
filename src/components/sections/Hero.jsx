@@ -5,17 +5,10 @@ import { PERSONAL_INFO } from '../../utils/constants';
 import { getSocialLinkById } from '../../data/social';
 import { featuredTech } from '../../data/techStack';
 
-/**
- * Hero Component
- * Landing section with introduction and CTAs
- */
-
 const Hero = () => {
-  // Get specific social links
   const githubLink = getSocialLinkById('github');
   const linkedinLink = getSocialLinkById('linkedin');
 
-  // Scroll to contact section
   const scrollToContact = () => {
     const element = document.getElementById('contact');
     if (element) {
@@ -30,7 +23,6 @@ const Hero = () => {
     }
   };
 
-  // Scroll to projects section
   const scrollToProjects = () => {
     const element = document.getElementById('projects');
     if (element) {
@@ -60,16 +52,7 @@ const Hero = () => {
       {/* Content */}
       <div className="container-custom relative z-10">
         <div className="max-w-5xl mx-auto">
-          <div className="text-center space-y-8 animate-fade-up">
-            
-            {/* Greeting Badge */}
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary-100 dark:bg-primary-900/30 border border-primary-200 dark:border-primary-800 text-primary-700 dark:text-primary-300 text-sm font-medium">
-              <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary-500 opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-primary-500"></span>
-              </span>
-              {PERSONAL_INFO.availability}
-            </div>
+          <div className="text-center space-y-8 animate-fade-up">     
 
             {/* Main Heading */}
             <div className="space-y-4">
