@@ -1,43 +1,24 @@
-// Custom hook for managing theme (dark/light mode)
+// Custom hook for managing theme (light/dark mode)
 import { useState, useEffect } from 'react';
 import { THEME_MODES, STORAGE_KEYS } from '../utils/constants';
 import { getSystemTheme } from '../utils/helpers';
 
-/**
- * useTheme Hook
- * Manages dark/light theme with localStorage persistence and system preference detection
- * 
- * @returns {Object} Theme state and controls
- * - theme: Current theme ('light' or 'dark')
- * - setTheme: Function to set theme
- * - toggleTheme: Function to toggle between themes
- * - isDark: Boolean indicating if dark mode is active
- */
-
 const useTheme = () => {
-  // Initialize theme from localStorage or system preference
   const [theme, setThemeState] = useState(() => {
-    // Check localStorage first
     const savedTheme = localStorage.getItem(STORAGE_KEYS.THEME);
     
     if (savedTheme && (savedTheme === THEME_MODES.LIGHT || savedTheme === THEME_MODES.DARK)) {
       return savedTheme;
     }
-    
-    // Fall back to system preference
     return getSystemTheme();
   });
 
-  // Apply theme to document and save to localStorage
   useEffect(() => {
     const root = document.documentElement;
-    
-    // Remove both classes first
     root.classList.remove(THEME_MODES.LIGHT, THEME_MODES.DARK);
     
-    // Add current theme class
-    if (theme === THEME_MODES.DARK) {
-      root.classList.add('dark');
+    if (theme === THEME_MODES.LIGHT) {
+      root.classList.add('light');
     }
     
     // Save to localStorage
@@ -48,21 +29,20 @@ const useTheme = () => {
     if (metaThemeColor) {
       metaThemeColor.setAttribute(
         'content',
-        theme === THEME_MODES.DARK ? '#0a0a0a' : '#ffffff'
+        theme === THEME_MODES.LIGHT ? '#ffffff' : '#0a0a0a'
       );
     }
   }, [theme]);
 
-  // Listen for system theme changes
   useEffect(() => {
-    const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+    const mediaQuery = window.matchMedia('(prefers-color-scheme: light)');
     
     const handleChange = (e) => {
       // Only auto-switch if user hasn't manually set a preference
       const savedTheme = localStorage.getItem(STORAGE_KEYS.THEME);
       
       if (!savedTheme) {
-        setThemeState(e.matches ? THEME_MODES.DARK : THEME_MODES.LIGHT);
+        setThemeState(e.matches ? THEME_MODES.LIGHT : THEME_MODES.DARK);
       }
     };
     
@@ -80,7 +60,7 @@ const useTheme = () => {
 
   // Set theme function
   const setTheme = (newTheme) => {
-    if (newTheme === THEME_MODES.LIGHT || newTheme === THEME_MODES.DARK) {
+    if (newTheme === THEME_MODES.DARK || newTheme === THEME_MODES.LIGHT) {
       setThemeState(newTheme);
     }
   };
@@ -88,18 +68,18 @@ const useTheme = () => {
   // Toggle theme function
   const toggleTheme = () => {
     setThemeState(prevTheme => 
-      prevTheme === THEME_MODES.DARK ? THEME_MODES.LIGHT : THEME_MODES.DARK
+      prevTheme === THEME_MODES.LIGHT ? THEME_MODES.DARK : THEME_MODES.LIGHT
     );
   };
 
   // Helper boolean
-  const isDark = theme === THEME_MODES.DARK;
+  const isLight = theme === THEME_MODES.LIGHT;
 
   return {
     theme,
     setTheme,
     toggleTheme,
-    isDark,
+    isLight,
   };
 };
 

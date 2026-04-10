@@ -39,7 +39,7 @@ const Hero = () => {
   };
 
   return (
-   <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-light-bg dark:bg-dark-bg">
+   <section className="relative min-h-[calc(88svh-5rem)] sm:min-h-[calc(92svh-5rem)] lg:min-h-[calc(100svh-5rem)] flex items-center justify-center overflow-hidden bg-light-bg dark:bg-dark-bg py-8 sm:py-12 lg:py-16">
 {/* Background Decorations */}
 <div className="absolute inset-0 overflow-hidden pointer-events-none">
         {/* Gradient Orbs */}
@@ -51,7 +51,7 @@ const Hero = () => {
       </div>
 
       {/* Content */}
-      <div className="container-custom relative z-10">
+      <div className="container-custom relative z-10 w-full">
         <div className="max-w-5xl mx-auto">
           <div className="text-center space-y-6 sm:space-y-8 animate-fade-up">
             {/* Main Heading */}
