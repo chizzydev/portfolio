@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Code2, Wrench, BookOpen, Target } from 'lucide-react';
+import { Code2, Wrench, Server, Shield } from 'lucide-react';
 import SectionTitle from '../ui/SectionTitle';
 import Card from '../ui/Card';
 import Badge from '../ui/Badge';
@@ -11,13 +11,13 @@ import {
 } from '../../data/techStack';
 
 const TechStack = () => {
-  const [activeCategory, setActiveCategory] = useState('Frontend');
+  const [activeCategory, setActiveCategory] = useState('Backend');
 
   const categoryIcons = {
     Frontend: Code2,
     Tools: Wrench,
-    Learning: BookOpen,
-    Practices: Target,
+    Backend: Server,
+    Learning: Shield,
   };
 
   return (
@@ -27,7 +27,7 @@ const TechStack = () => {
         <AnimatedSection>
           <SectionTitle
             title="Tech Stack"
-            subtitle="Technologies and tools I work with"
+            subtitle="Technologies, platforms, and active learning areas I use to ship products end to end"
             align="center"
             underline
           />
@@ -70,7 +70,6 @@ const TechStack = () => {
           </div>
         </AnimatedSection>
 
-        {/* ✅ THIS IS THE FIX */}
         <AnimatedSection>
          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-fr">
             {techStackByCategory[activeCategory].map((tech, index) => (

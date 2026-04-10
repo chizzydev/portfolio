@@ -3,12 +3,12 @@
 // Personal information
 export const PERSONAL_INFO = {
   name: "Chizaram Chukwuka Anthony",
-  title: "Front-end React Developer",
-  tagline: "Building Scalable, Production-Ready Web Applications",
+  title: "Full-Stack JavaScript Developer",
+  tagline: "Building production web, mobile, and backend products that solve real business problems.",
   email: "chukwukachizaram150@gmail.com",
   phone: "+234 912 186 4819",
-  location: "Awka, Anambra State, Nigeria",
-  availability: "Available for freelance work",
+  location: "Nnewi, Anambra State, Nigeria",
+  availability: "Open to full-time roles and selective freelance projects",
   resumeUrl: "/cv.pdf",
 };
 
@@ -35,8 +35,8 @@ export const PROJECT_CATEGORIES = [
 export const TECH_CATEGORIES = {
   FRONTEND: "Frontend",
   TOOLS: "Tools & Workflow",
-  LEARNING: "Learning/Familiar With",
-  PRACTICES: "Development Practices",
+  BACKEND: "Backend",
+  LEARNING: "Learning",
 };
 
 // Experience types
@@ -57,28 +57,28 @@ export const ACHIEVEMENT_TYPES = {
 // Service categories
 export const SERVICES = [
   {
-    id: "web-development",
-    title: "Web Application Development",
-    description: "Building modern, responsive web applications using React, Vite, and Tailwind CSS",
+    id: "full-stack-product-development",
+    title: "Full-Stack Product Development",
+    description: "Building production-ready products from interface to API, auth, business logic, and delivery workflows.",
     icon: "Code2",
   },
   {
-    id: "ui-implementation",
-    title: "UI/UX Implementation",
-    description: "Converting designs into pixel-perfect, accessible, and responsive interfaces",
-    icon: "Palette",
+    id: "web-mobile-experiences",
+    title: "Web and Mobile Experiences",
+    description: "Shipping responsive web apps and mobile experiences with React, Next.js, and React Native patterns.",
+    icon: "Layout",
   },
   {
-    id: "component-libraries",
-    title: "Component Libraries",
-    description: "Creating reusable, scalable component systems for design consistency",
+    id: "backend-api-systems",
+    title: "Backend and API Systems",
+    description: "Designing backend services, data flows, and integrations that support real product behavior at scale.",
     icon: "Blocks",
   },
   {
-    id: "frontend-architecture",
-    title: "Frontend Architecture",
-    description: "Designing clean, maintainable, and scalable frontend architectures",
-    icon: "Layout",
+    id: "product-architecture-optimization",
+    title: "Architecture and Product Refinement",
+    description: "Improving reliability, UX, maintainability, and performance across evolving codebases.",
+    icon: "Palette",
   },
 ];
 
@@ -154,9 +154,9 @@ export const EMAILJS_CONFIG = {
 
 // SEO metadata
 export const SEO_CONFIG = {
-  title: "Chukwuka Chizaram Anthony | Full-Stack React Developer",
-  description: "Full-stack React developer specializing in building scalable, production-ready web applications. Portfolio showcasing projects built with React, Vite, and Tailwind CSS.",
-  keywords: "React Developer, Frontend Developer, Full-Stack Developer, Web Developer, JavaScript, Tailwind CSS, Vite",
+  title: "Chukwuka Chizaram Anthony | Full-Stack JavaScript Developer",
+  description: "Full-stack JavaScript developer building production web, mobile, and backend products with React, Next.js, Node.js, PostgreSQL, and modern product engineering workflows.",
+  keywords: "Full-Stack JavaScript Developer, Node.js Developer, Next.js Developer, React Developer, Web Developer, Mobile App Developer, Backend Developer, PostgreSQL, Tailwind CSS",
   author: "Chukwuka Chizaram Anthony",
   ogImage: "/og-image.png",
   twitterHandle: "@Chizaram250",

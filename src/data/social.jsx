@@ -41,7 +41,7 @@ export const socialLinks = [
     name: 'LinkedIn',
     icon: Linkedin,
     url: 'https://www.linkedin.com/in/chizaram-chukwuka-b331b6222',
-    username: 'Your Name',
+    username: 'Chizaram Chukwuka',
     color: '#0077B5',
     show: true,
   },
@@ -68,7 +68,7 @@ export const socialLinks = [
     name: 'Instagram',
     icon: Instagram,
     url: 'https://instagram.com/Chizzyy250',
-    username: '@yourusername',
+    username: '@Chizzyy250',
     color: '#E4405F',
     show: false, // Set to true if you want to display
   },
@@ -85,8 +85,8 @@ export const socialLinks = [
     id: 'youtube',
     name: 'YouTube',
     icon: Youtube,
-    url: 'https://youtube.com/@yourchannel',
-    username: '@yourchannel',
+    url: '',
+    username: '',
     color: '#FF0000',
     show: false, // Set to true if you want to display
   },
@@ -119,9 +119,9 @@ export const contactInfo = [
     id: 'location',
     name: 'Location',
     icon: MapPin,
-    value: 'Awka, Anambra State, Nigeria',
+    value: 'Nnewi, Anambra State, Nigeria',
     href: null, // No link for location
-    display: 'Awka, Nigeria',
+    display: 'Nnewi, Nigeria',
     copyable: false,
   },
 ];
@@ -168,8 +168,8 @@ export const footerSocialLinks = socialLinks.filter(link => link.show);
  */
 export const resumeLink = {
   label: 'Download Resume',
-  url: '/resume.pdf', // Place your resume.pdf in public folder
-  fileName: 'YourName_Resume.pdf',
+  url: '/cv.pdf',
+  fileName: 'Chizaram_Chukwuka_Resume.pdf',
 };
 
 /**
@@ -178,7 +178,7 @@ export const resumeLink = {
  */
 export const availability = {
   status: 'available', // 'available', 'busy', 'unavailable'
-  message: 'Available for freelance work',
+  message: 'Open to full-time roles and selective freelance projects',
   statusColors: {
     available: 'bg-green-500',
     busy: 'bg-yellow-500',

@@ -57,7 +57,7 @@ const Contact = () => {
         {
           from_name: formData.name,
           from_email: formData.email,
-          subject: formData.subject || 'Portfolio Contact Form',
+          subject: formData.subject || 'Portfolio website inquiry',
           message: formData.message,
           to_email: PERSONAL_INFO.email,
         },
@@ -87,7 +87,7 @@ const Contact = () => {
         </AnimatedSection>
 
         {/* Main grid: Form + Contact Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-[1fr_auto] gap-8 lg:gap-12 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_320px] gap-8 lg:gap-12 max-w-6xl mx-auto">
 
           {/* Form */}
           <AnimatedSection animation="fade-right" delay={200}>
@@ -183,7 +183,7 @@ const Contact = () => {
 
           {/* Contact Cards: Email / Phone / Location */}
           <AnimatedSection animation="fade-left" delay={300}>
-            <div className="flex flex-col md:flex-col lg:flex-col xl:flex-col gap-4 md:gap-6">
+            <div className="flex flex-col gap-4 md:gap-6 max-w-md mx-auto lg:max-w-none">
               {contactInfo.map(contact => {
                 const Icon = contact.icon;
                 const isCopied = copiedId === contact.id;

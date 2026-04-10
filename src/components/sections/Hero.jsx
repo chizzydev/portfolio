@@ -3,11 +3,12 @@ import { ArrowRight, Download, Mail, Github, Linkedin } from 'lucide-react';
 import Button from '../ui/Button';
 import { PERSONAL_INFO } from '../../utils/constants';
 import { getSocialLinkById } from '../../data/social';
-import { featuredTech } from '../../data/techStack';
+import { getFeaturedTech } from '../../data/techStack';
 
 const Hero = () => {
   const githubLink = getSocialLinkById('github');
   const linkedinLink = getSocialLinkById('linkedin');
+  const featuredStack = getFeaturedTech();
 
   const scrollToContact = () => {
     const element = document.getElementById('contact');
@@ -52,8 +53,7 @@ const Hero = () => {
       {/* Content */}
       <div className="container-custom relative z-10">
         <div className="max-w-5xl mx-auto">
-          <div className="text-center space-y-8 animate-fade-up">     
-
+          <div className="text-center space-y-6 sm:space-y-8 animate-fade-up">
             {/* Main Heading */}
             <div className="space-y-4">
               <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-light-text-primary dark:text-dark-text-primary leading-tight">
@@ -73,14 +73,18 @@ const Hero = () => {
               {PERSONAL_INFO.tagline}
             </p>
 
+            <p className="text-sm md:text-base text-light-text-tertiary dark:text-dark-text-tertiary max-w-3xl mx-auto leading-relaxed">
+              Currently building Decide, a phone intelligence platform spanning website, backend APIs, and Android app delivery.
+            </p>
+
             {/* Featured Tech Stack */}
             <div className="flex flex-wrap items-center justify-center gap-3 pt-4">
-              {featuredTech.map((tech) => (
+              {featuredStack.map((tech) => (
                 <span
-                  key={tech}
-                  className="px-4 py-2 rounded-full text-base font-medium bg-light-card dark:bg-dark-card border border-light-border dark:border-dark-border text-light-text-primary dark:text-dark-text-primary hover:border-primary-500 dark:hover:border-primary-400 transition-all duration-300 hover:scale-105"
+                  key={tech.id}
+                  className="px-3 sm:px-4 py-2 rounded-full text-sm md:text-base font-medium bg-light-card dark:bg-dark-card border border-light-border dark:border-dark-border text-light-text-primary dark:text-dark-text-primary hover:border-primary-500 dark:hover:border-primary-400 transition-all duration-300 hover:scale-105"
                 >
-                  {tech}
+                  {tech.name}
                 </span>
               ))}
             </div>
@@ -93,7 +97,7 @@ const Hero = () => {
                 rightIcon={<ArrowRight className="w-5 h-5" />}
                 onClick={scrollToProjects}
               >
-                View My Work
+                View Selected Products
               </Button>
 
               <Button
@@ -102,7 +106,7 @@ const Hero = () => {
                 leftIcon={<Mail className="w-5 h-5" />}
                 onClick={scrollToContact}
               >
-                Get In Touch
+                Let's Talk
               </Button>
 
               <Button
@@ -116,7 +120,7 @@ const Hero = () => {
             </div>
 
             {/* Social Links */}
-            <div className="flex items-center justify-center gap-4 pt-8">
+            <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 pt-8">
               <p className="text-sm text-light-text-tertiary dark:text-dark-text-tertiary">
                 Connect with me:
               </p>
@@ -146,12 +150,6 @@ const Hero = () => {
               </div>
             </div>
 
-            {/* Scroll Indicator */}
-            <div className="pt-12 animate-bounce">
-              <div className="w-6 h-10 mx-auto border-2 border-primary-500 dark:border-primary-400 rounded-full p-1">
-                <div className="w-1 h-3 bg-primary-500 dark:bg-primary-400 rounded-full mx-auto animate-pulse" />
-              </div>
-            </div>
           </div>
         </div>
       </div>

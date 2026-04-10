@@ -1,19 +1,4 @@
-// Technical skills and tech stack configuration
-// Organized by categories for easy display and filtering
-
-/**
- * Tech stack items
- * Each item includes:
- * - name: Technology name
- * - category: Category it belongs to
- * - proficiency: Skill level (expert, advanced, intermediate, beginner)
- * - icon: Icon name (you can add icon components later if needed)
- * - color: Brand/theme color for the tech
- * - description: Brief description (optional)
- */
-
 export const techStack = [
-  // FRONTEND TECHNOLOGIES
   {
     id: 'react',
     name: 'React',
@@ -63,13 +48,22 @@ export const techStack = [
     id: 'typescript',
     name: 'TypeScript',
     category: 'Frontend',
-    proficiency: 'intermediate',
+    proficiency: 'advanced',
     icon: 'typescript',
     color: '#3178C6',
     description: 'Type-safe JavaScript development',
   },
+  {
+    id: 'react-native',
+    name: 'React Native / Expo',
+    category: 'Frontend',
+    proficiency: 'advanced',
+    icon: 'react',
+    color: '#61DAFB',
+    description: 'Cross-platform mobile app development for Android-first product delivery',
+  },
 
-  // TOOLS & WORKFLOW
+  
   {
     id: 'vite',
     name: 'Vite',
@@ -116,39 +110,20 @@ export const techStack = [
     description: 'Package management',
   },
   {
-    id: 'figma',
-    name: 'Figma',
-    category: 'Tools',
-    proficiency: 'intermediate',
-    icon: 'figma',
-    color: '#F24E1E',
-    description: 'Design to code workflow',
-  },
-  {
-    id: 'eslint',
-    name: 'ESLint',
-    category: 'Tools',
-    proficiency: 'intermediate',
-    icon: 'eslint',
-    color: '#4B32C3',
-    description: 'Code quality and linting',
-  },
-  {
     id: 'postman',
     name: 'Postman',
     category: 'Tools',
-    proficiency: 'intermediate',
+    proficiency: 'advanced',
     icon: 'postman',
     color: '#FF6C37',
     description: 'API testing and development',
   },
 
-  // LEARNING/FAMILIAR WITH
   {
     id: 'nodejs',
     name: 'Node.js',
-    category: 'Learning',
-    proficiency: 'beginner',
+    category: 'Backend',
+    proficiency: 'advanced',
     icon: 'nodejs',
     color: '#339933',
     description: 'JavaScript runtime for backend',
@@ -156,8 +131,8 @@ export const techStack = [
   {
     id: 'nextjs',
     name: 'Next.js',
-    category: 'Learning',
-    proficiency: 'beginner',
+    category: 'Backend',
+    proficiency: 'advanced',
     icon: 'nextjs',
     color: '#000000',
     description: 'React framework for production',
@@ -165,76 +140,59 @@ export const techStack = [
   {
     id: 'express',
     name: 'Express.js',
-    category: 'Learning',
-    proficiency: 'beginner',
+    category: 'Backend',
+    proficiency: 'advanced',
     icon: 'express',
     color: '#000000',
     description: 'Web framework for Node.js',
   },
+  
+{
+  id: 'supabase',
+  name: 'Supabase (PostgreSQL)',
+  category: 'Backend',
+  proficiency: 'advanced',
+  icon: 'supabase',
+  color: '#3ECF8E',
+  description: 'Backend-as-a-service built on PostgreSQL for scalable databases, auth, and real-time APIs',
+},
+
+  // ACTIVE LEARNING
   {
-    id: 'mongodb',
-    name: 'MongoDB',
+    id: 'cybersecurity-fundamentals',
+    name: 'Cybersecurity Fundamentals',
     category: 'Learning',
     proficiency: 'beginner',
-    icon: 'mongodb',
-    color: '#47A248',
-    description: 'NoSQL database',
-  },
-
-  // DEVELOPMENT PRACTICES
-  {
-    id: 'responsive-design',
-    name: 'Responsive Design',
-    category: 'Practices',
-    proficiency: 'advanced',
-    icon: 'monitor',
-    color: '#6366F1',
-    description: 'Mobile-first, adaptive layouts',
+    icon: 'shield',
+    color: '#EF4444',
+    description: 'Learning core security concepts, threat awareness, and safer engineering habits.',
   },
   {
-    id: 'component-architecture',
-    name: 'Component Architecture',
-    category: 'Practices',
-    proficiency: 'advanced',
-    icon: 'component',
-    color: '#8B5CF6',
-    description: 'Reusable, scalable components',
+    id: 'owasp-top-10',
+    name: 'OWASP Top 10',
+    category: 'Learning',
+    proficiency: 'beginner',
+    icon: 'shield-alert',
+    color: '#F97316',
+    description: 'Studying common web vulnerabilities and how to prevent them in real applications.',
   },
   {
-    id: 'clean-code',
-    name: 'Clean Code',
-    category: 'Practices',
-    proficiency: 'advanced',
-    icon: 'code',
-    color: '#EC4899',
-    description: 'Maintainable, readable code',
-  },
-  {
-    id: 'accessibility',
-    name: 'Accessibility (A11y)',
-    category: 'Practices',
+    id: 'auth-session-security',
+    name: 'Auth and Session Security',
+    category: 'Learning',
     proficiency: 'intermediate',
-    icon: 'accessibility',
+    icon: 'lock',
+    color: '#3B82F6',
+    description: 'Deepening practical knowledge around OAuth, sessions, abuse protection, and recovery flows.',
+  },
+  {
+    id: 'secure-api-design',
+    name: 'Secure API Design',
+    category: 'Learning',
+    proficiency: 'intermediate',
+    icon: 'server',
     color: '#10B981',
-    description: 'WCAG 2.1 compliance',
-  },
-  {
-    id: 'performance',
-    name: 'Performance Optimization',
-    category: 'Practices',
-    proficiency: 'intermediate',
-    icon: 'zap',
-    color: '#F59E0B',
-    description: 'Fast, efficient applications',
-  },
-  {
-    id: 'seo',
-    name: 'SEO Best Practices',
-    category: 'Practices',
-    proficiency: 'intermediate',
-    icon: 'search',
-    color: '#06B6D4',
-    description: 'Search engine optimization',
+    description: 'Learning stronger validation, rate limiting, safer contracts, and defensive backend patterns.',
   },
 ];
 
@@ -244,8 +202,8 @@ export const techStack = [
 export const techStackByCategory = {
   Frontend: techStack.filter(tech => tech.category === 'Frontend'),
   Tools: techStack.filter(tech => tech.category === 'Tools'),
+  Backend: techStack.filter(tech => tech.category === 'Backend'),
   Learning: techStack.filter(tech => tech.category === 'Learning'),
-  Practices: techStack.filter(tech => tech.category === 'Practices'),
 };
 
 /**
@@ -262,15 +220,15 @@ export const categoryInfo = {
     description: 'Development tools and platforms I work with daily',
     icon: 'Wrench',
   },
-  Learning: {
-    title: 'Learning & Exploring',
-    description: 'Technologies I\'m currently learning and growing my skills in',
-    icon: 'BookOpen',
+  Backend: {
+    title: 'Backend Development',
+    description: 'Languages and frameworks I use to build APIs and application logic',
+    icon: 'Server',
   },
-  Practices: {
-    title: 'Development Practices',
-    description: 'Professional standards and methodologies I follow',
-    icon: 'Target',
+  Learning: {
+    title: 'Active Learning',
+    description: 'Skills I am currently studying and strengthening, including cybersecurity',
+    icon: 'Shield',
   },
 };
 
@@ -281,11 +239,12 @@ export const featuredTech = [
   'react',
   'javascript',
   'typescript',
-  'tailwind',
-  'vite',
-  'git',
-  'responsive-design',
-  'basic nodejs'
+  'react-native',
+  'nextjs',
+  'nodejs',
+  'express',
+  'supabase',
+  'tailwind'
 ];
 
 /**
@@ -361,8 +320,8 @@ export const techStackStats = {
   byCategory: {
     Frontend: techStackByCategory.Frontend.length,
     Tools: techStackByCategory.Tools.length,
+    Backend: techStackByCategory.Backend.length,
     Learning: techStackByCategory.Learning.length,
-    Practices: techStackByCategory.Practices.length,
   },
   byProficiency: {
     expert: getTechsByProficiency('expert').length,

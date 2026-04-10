@@ -25,8 +25,8 @@ const Services = () => {
         {/* Section Title */}
         <AnimatedSection>
           <SectionTitle
-            title="What I Can Do For You"
-            subtitle="Services I offer to bring your ideas to life"
+            title="Core Capabilities"
+            subtitle="Where I contribute across product delivery, frontend systems, backend logic, and engineering quality"
             align="center"
             underline
           />
@@ -77,7 +77,7 @@ const Services = () => {
                           onClick={scrollToContact}
                           className="inline-flex items-center gap-2 text-primary-500 hover:text-primary-600 dark:hover:text-primary-400 font-medium text-sm group/link transition-colors"
                         >
-                          <span>Get Started</span>
+                          <span>Discuss a Project</span>
                           <ArrowRight className="w-4 h-4 transition-transform group-hover/link:translate-x-1" />
                         </button>
                       </div>

@@ -1,6 +1,6 @@
 // Projects section - Portfolio showcase
 import { useState } from 'react';
-import { ExternalLink, Github, Play } from 'lucide-react';
+import { ArrowRight, ExternalLink, Github, Play } from 'lucide-react';
 import SectionTitle from '../ui/SectionTitle';
 import Card, { CardTitle, CardDescription } from '../ui/Card';
 import Badge, { CategoryBadge, StatusBadge } from '../ui/Badge';
@@ -26,8 +26,8 @@ const Projects = () => {
         <div className="max-w-6xl mx-auto">
           <AnimatedSection>
             <SectionTitle
-              title="Featured Projects"
-              subtitle="Check out some of my recent work"
+              title="Selected Products and Case Studies"
+              subtitle="Products that best show how I design, build, and ship across frontend, backend, and product delivery"
               align="center"
               underline
             />
@@ -78,11 +78,35 @@ const Projects = () => {
                       />
                     ) : (
                       <div className="w-full h-full flex items-center justify-center text-white">
-                        <div className="text-center p-6">
-                          <div className="text-5xl font-bold mb-2">
-                            {project.title.charAt(0)}
+                        <div className="w-full h-full p-6 sm:p-8 flex flex-col justify-between bg-[radial-gradient(circle_at_top_right,rgba(255,255,255,0.18),transparent_35%),linear-gradient(135deg,rgba(15,23,42,0.15),rgba(2,6,23,0.5))]">
+                          <div className="flex items-start justify-between gap-3">
+                            <span className="rounded-full bg-white/15 px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em]">
+                              {project.status === 'in-progress' ? 'Active build' : 'Case study'}
+                            </span>
+                            <span className="rounded-full border border-white/20 px-3 py-1 text-xs font-medium">
+                              {project.category === 'web-app' ? 'Web / Mobile / API' : 'Project'}
+                            </span>
                           </div>
-                          <p className="text-sm opacity-75">Project Screenshot</p>
+
+                          <div className="space-y-3">
+                            <div className="text-4xl sm:text-5xl font-bold leading-none">
+                              {project.title.split(' ').slice(0, 2).join(' ')}
+                            </div>
+                            <p className="max-w-sm text-sm sm:text-base text-white/85 leading-relaxed">
+                              {project.description}
+                            </p>
+                          </div>
+
+                          <div className="flex flex-wrap gap-2">
+                            {project.techStack.slice(0, 3).map((tech) => (
+                              <span
+                                key={tech}
+                                className="rounded-full border border-white/20 bg-white/10 px-3 py-1 text-xs font-medium"
+                              >
+                                {tech}
+                              </span>
+                            ))}
+                          </div>
                         </div>
                       </div>
                     )}
@@ -133,6 +157,15 @@ const Projects = () => {
                     <CardDescription className="line-clamp-2 text-sm sm:text-base">
                       {project.description}
                     </CardDescription>
+
+                    <div className="rounded-xl border border-light-border/80 bg-light-bg/60 p-3 dark:border-dark-border dark:bg-dark-bg/40">
+                      <p className="text-xs font-semibold uppercase tracking-[0.18em] text-light-text-tertiary dark:text-dark-text-tertiary">
+                        What this project proves
+                      </p>
+                      <p className="mt-2 text-sm text-light-text-secondary dark:text-dark-text-secondary line-clamp-2">
+                        {project.challenges?.[0]?.solution || project.features?.[0]}
+                      </p>
+                    </div>
 
                     <div className="flex flex-wrap gap-2">
                       {project.techStack.slice(0, 3).map((tech, i) => (
@@ -193,7 +226,7 @@ const Projects = () => {
           <AnimatedSection>
             <div className="text-center py-12">
               <p className="text-light-text-secondary dark:text-dark-text-secondary">
-                No projects found in this category.
+                No case studies found in this category.
               </p>
             </div>
           </AnimatedSection>
@@ -225,6 +258,83 @@ const Projects = () => {
             <p className="leading-relaxed">
               {selectedProject.longDescription || selectedProject.description}
             </p>
+
+            {selectedProject.features?.length > 0 && (
+              <div className="space-y-3 pt-2">
+                <h4 className="text-lg font-semibold text-light-text-primary dark:text-dark-text-primary">
+                  Product highlights
+                </h4>
+                <div className="grid gap-3 sm:grid-cols-2">
+                  {selectedProject.features.slice(0, 6).map((feature, index) => (
+                    <div
+                      key={index}
+                      className="rounded-xl border border-light-border dark:border-dark-border bg-light-bg/60 dark:bg-dark-bg/40 p-4"
+                    >
+                      <div className="flex items-start gap-3">
+                        <span className="mt-0.5 rounded-full bg-primary-100 px-2 py-1 text-xs font-semibold text-primary-700 dark:bg-primary-900/30 dark:text-primary-300">
+                          {index + 1}
+                        </span>
+                        <p className="text-sm text-light-text-secondary dark:text-dark-text-secondary leading-relaxed">
+                          {feature}
+                        </p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {selectedProject.challenges?.length > 0 && (
+              <div className="space-y-3 pt-2">
+                <h4 className="text-lg font-semibold text-light-text-primary dark:text-dark-text-primary">
+                  Notable challenges solved
+                </h4>
+                <div className="space-y-3">
+                  {selectedProject.challenges.slice(0, 3).map((challenge, index) => (
+                    <div
+                      key={index}
+                      className="rounded-xl border border-light-border dark:border-dark-border bg-light-bg/60 dark:bg-dark-bg/40 p-4"
+                    >
+                      <p className="text-sm font-semibold text-light-text-primary dark:text-dark-text-primary">
+                        {challenge.problem}
+                      </p>
+                      <p className="mt-2 text-sm text-light-text-secondary dark:text-dark-text-secondary leading-relaxed">
+                        {challenge.solution}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            <div className="flex flex-wrap gap-3 pt-2">
+              {selectedProject.links.live && (
+                <Button
+                  variant="primary"
+                  size="sm"
+                  leftIcon={<ExternalLink className="w-4 h-4" />}
+                  onClick={() => window.open(selectedProject.links.live, '_blank')}
+                >
+                  View project
+                </Button>
+              )}
+              {selectedProject.links.github && (
+                <Button
+                  variant="outline"
+                  size="sm"
+                  leftIcon={<Github className="w-4 h-4" />}
+                  onClick={() => window.open(selectedProject.links.github, '_blank')}
+                >
+                  Source code
+                </Button>
+              )}
+              {!selectedProject.links.live && !selectedProject.links.github && (
+                <div className="inline-flex items-center gap-2 rounded-lg border border-light-border px-4 py-2 text-sm text-light-text-secondary dark:border-dark-border dark:text-dark-text-secondary">
+                  <ArrowRight className="w-4 h-4" />
+                  Private or in-progress build
+                </div>
+              )}
+            </div>
           </ModalBody>
         </Modal>
       )}

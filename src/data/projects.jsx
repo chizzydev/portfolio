@@ -1,5 +1,55 @@
 export const projects = [
-  // EXAMPLE PROJECT 1 - Admin Dashboard (Your existing project)
+  {
+  id: 'decide-platform',
+  title: 'Decide - Phone Intelligence Platform',
+  description: 'Cross-platform phone intelligence product with a website, Android app, backend APIs, live pricing workflows, and product decision tooling for the Nigerian market.',
+  longDescription: 'Decide is a product-focused phone intelligence platform built end to end across web, mobile, and backend. It combines curated phone data, vendor price tracking, compare and analyze flows, account-backed saves and alerts, Google authentication, scraping and normalization workflows, and a growing market intelligence layer. I have been responsible for architecture, backend API design, data cleanup workflows, production UX refinement, Android QA, and the broader direction for turning it into a monetizable product.',
+  category: 'web-app',
+  image: '',
+  techStack: [
+    'Next.js',
+    'React Native (Expo)',
+    'Node.js',
+    'Express.js',
+    'PostgreSQL',
+    'TypeScript',
+    'Tailwind CSS',
+    'Google OAuth',
+    'Cheerio',
+    'Supabase',
+  ],
+  features: [
+    'Website plus Android app connected to a shared backend and account system',
+    'Phone browse, compare, analyze, saved phones, and price alert flows',
+    'Live vendor pricing pipelines and product normalization for Nigerian phone listings',
+    'Google sign-in, password reset, session management, and account security flows',
+    'Admin workflows for data quality, sync jobs, moderation, and operational control',
+    'Wave 1 market intelligence surfaces for deals, price history, and decision verdicts',
+  ],
+  challenges: [
+    {
+      problem: 'Real-world vendor data was noisy, inconsistent, and full of mismatched or accessory listings.',
+      solution: 'Built matching, filtering, and validation logic to clean product data, normalize naming, and keep the catalog trustworthy.',
+    },
+    {
+      problem: 'The mobile app needed production-quality Android UX while sharing truth with the website and backend.',
+      solution: 'Stabilized the mobile shell, account flows, auth recovery, alerts, compare, and narrow-screen behavior through real-device QA on Android.',
+    },
+    {
+      problem: 'The product needed to move beyond static comparison into acquisition, retention, and monetization surfaces.',
+      solution: 'Planned and implemented Wave 1 market intelligence layers including price history, deals discovery, verdict pages, and a watchlist hub.',
+    },
+  ],
+  links: {
+    live: '',
+    github: '',
+    demo: '',
+  },
+  date: '2026-04',
+  featured: true,
+  status: 'in-progress',
+},
+
  {
   id: 'ecommerce-store',
   title: 'Full-Stack E-Commerce Platform',
@@ -199,7 +249,7 @@ export const projectCategories = [
     label: 'Open Source',
     count: projectsByCategory['open-source'].length,
   },
-];
+].filter((category) => category.id === 'all' || category.count > 0);
 
 export default {
   projects,

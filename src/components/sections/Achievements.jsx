@@ -6,7 +6,7 @@ import Card, { CardTitle, CardDescription } from '../ui/Card';
 import Badge from '../ui/Badge';
 import Button from '../ui/Button';
 import AnimatedSection, { StaggeredList } from '../common/AnimatedSection';
-import { 
+import {
   achievementsByDate,
   achievementTypes,
   getAchievementsByType
@@ -16,9 +16,13 @@ import { formatDate } from '../../utils/helpers';
 const Achievements = () => {
   const [filter, setFilter] = useState('all');
 
-  const filteredAchievements = filter === 'all' 
-    ? achievementsByDate 
+  const filteredAchievements = filter === 'all'
+    ? achievementsByDate
     : getAchievementsByType(filter);
+
+  const visibleAchievementTypes = Object.entries(achievementTypes).filter(
+    ([type]) => getAchievementsByType(type).length > 0
+  );
 
   const typeIcons = {
     certification: Award,
@@ -30,7 +34,6 @@ const Achievements = () => {
   return (
     <section className="section-padding bg-light-card dark:bg-dark-card">
       <div className="container-custom">
-        {/* Section Title */}
         <AnimatedSection>
           <SectionTitle
             title="Achievements"
@@ -40,7 +43,6 @@ const Achievements = () => {
           />
         </AnimatedSection>
 
-        {/* Filter Tabs */}
         <AnimatedSection delay={200}>
           <div className="flex flex-wrap justify-center gap-3 mb-12">
             <button
@@ -54,7 +56,7 @@ const Achievements = () => {
               All Achievements
             </button>
 
-            {Object.entries(achievementTypes).map(([type, config]) => {
+            {visibleAchievementTypes.map(([type, config]) => {
               const Icon = typeIcons[type];
               const count = getAchievementsByType(type).length;
               return (
@@ -76,7 +78,6 @@ const Achievements = () => {
           </div>
         </AnimatedSection>
 
-        {/* ✅ Achievements Grid */}
         <div className="max-w-6xl mx-auto mt-8">
           <StaggeredList staggerDelay={100}>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -91,11 +92,9 @@ const Achievements = () => {
                     hoverable
                     className="group relative overflow-hidden w-full"
                   >
-                    {/* Type bar */}
                     <div className="absolute top-0 left-0 right-0 h-1" style={{ backgroundColor: typeConfig.color }} />
 
                     <div className="space-y-4 p-5">
-                      {/* Icon + Badge */}
                       <div className="flex items-start justify-between">
                         <div className="w-12 h-12 rounded-lg flex items-center justify-center transition-transform group-hover:scale-110 duration-300" style={{ backgroundColor: `${typeConfig.color}20` }}>
                           <Icon className="w-6 h-6" style={{ color: typeConfig.color }} />
@@ -113,7 +112,6 @@ const Achievements = () => {
                         </Badge>
                       </div>
 
-                      {/* Image */}
                       {achievement.image && (
                         <div className="rounded-lg overflow-hidden bg-light-bg dark:bg-dark-bg h-50">
                           <img
@@ -124,7 +122,6 @@ const Achievements = () => {
                         </div>
                       )}
 
-                      {/* Title + Issuer */}
                       <div>
                         <CardTitle className="text-lg group-hover:text-primary-500 transition-colors">
                           {achievement.title}
@@ -133,7 +130,7 @@ const Achievements = () => {
                           <span className="font-medium">{achievement.issuer}</span>
                           {achievement.date && (
                             <>
-                              <span>•</span>
+                              <span>|</span>
                               <div className="flex items-center gap-1">
                                 <Calendar className="w-3 h-3" />
                                 <span>{formatDate(achievement.date, 'month-year')}</span>
@@ -143,12 +140,10 @@ const Achievements = () => {
                         </div>
                       </div>
 
-                      {/* Description */}
                       {achievement.description && (
                         <CardDescription className="text-sm">{achievement.description}</CardDescription>
                       )}
 
-                      {/* Skills */}
                       {achievement.skills && achievement.skills.length > 0 && (
                         <div>
                           <p className="text-xs font-medium text-light-text-tertiary dark:text-dark-text-tertiary mb-2">Skills:</p>
@@ -165,7 +160,6 @@ const Achievements = () => {
                         </div>
                       )}
 
-                      {/* Credential Button */}
                       {achievement.credentialUrl && (
                         <div className="pt-2">
                           <Button
@@ -193,7 +187,6 @@ const Achievements = () => {
           </StaggeredList>
         </div>
 
-        {/* Empty State */}
         {filteredAchievements.length === 0 && (
           <AnimatedSection>
             <div className="text-center py-12">

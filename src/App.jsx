@@ -12,7 +12,7 @@ import Experience from './components/sections/Experience';
 import Projects from './components/sections/Projects';
 import Services from './components/sections/Services';
 import Achievements from './components/sections/Achievements';
-import Testimonials from './components/sections/Testimonials';
+//import Testimonials from './components/sections/Testimonials';
 import Contact from './components/sections/Contact';
 
 // Common components
@@ -25,9 +25,9 @@ function App() {
     const savedTheme = localStorage.getItem('portfolio-theme');
     if (savedTheme) return savedTheme;
     
-    return window.matchMedia('(prefers-color-scheme: dark)').matches 
-      ? 'dark' 
-      : 'light';
+    return window.matchMedia('(prefers-color-scheme: light)').matches 
+      ? 'light' 
+      : 'dark';
   });
 
   // Apply theme to document
@@ -86,9 +86,9 @@ function App() {
   <Achievements />
 </section>
 
-<section id="testimonials" className="section-testimonials">
+{/*<section id="testimonials" className="section-testimonials">
   <Testimonials />
-</section>
+</section>*/}
 
 <section id="contact" className="section-contact">
   <Contact />

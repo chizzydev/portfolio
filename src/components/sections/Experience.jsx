@@ -1,24 +1,28 @@
 // Experience section - Work history and timeline
 import { useState } from 'react';
-import { Briefcase, Users, Code2, GraduationCap, MapPin, Calendar, ExternalLink } from 'lucide-react';
+import { Briefcase, Users, Code2, GraduationCap, MapPin, Calendar, ExternalLink, ArrowRight, Check } from 'lucide-react';
 import SectionTitle from '../ui/SectionTitle';
 import Card, { CardTitle, CardDescription } from '../ui/Card';
 import Badge from '../ui/Badge';
 import Button from '../ui/Button';
 import AnimatedSection, { StaggeredList } from '../common/AnimatedSection';
-import { 
-  experienceByDate, 
+import {
+  experienceByDate,
   experienceTypes,
-  formatDateRange 
+  formatDateRange
 } from '../../data/experience';
 import { calculateDuration } from '../../utils/helpers';
 
 const Experience = () => {
   const [filter, setFilter] = useState('all');
 
-  const filteredExperiences = filter === 'all' 
-    ? experienceByDate 
+  const filteredExperiences = filter === 'all'
+    ? experienceByDate
     : experienceByDate.filter(exp => exp.type === filter);
+
+  const visibleExperienceTypes = Object.entries(experienceTypes).filter(
+    ([type]) => experienceByDate.some((exp) => exp.type === type)
+  );
 
   const typeIcons = {
     work: Briefcase,
@@ -33,7 +37,7 @@ const Experience = () => {
         <AnimatedSection>
           <SectionTitle
             title="Experience"
-            subtitle="My professional journey and projects"
+            subtitle="Product work, freelance delivery, and systems I have owned end to end"
             align="center"
             underline
           />
@@ -54,7 +58,7 @@ const Experience = () => {
               All
             </button>
 
-            {Object.entries(experienceTypes).map(([type, config]) => {
+            {visibleExperienceTypes.map(([type, config]) => {
               const Icon = typeIcons[type];
               const count = experienceByDate.filter(exp => exp.type === type).length;
 
@@ -125,7 +129,7 @@ const Experience = () => {
                                   {exp.company}
                                 </CardDescription>
                               </div>
-                              
+
                               <Badge
                                 variant={
                                   exp.type === 'work' ? 'primary' :
@@ -146,7 +150,7 @@ const Experience = () => {
                                 <span className="truncate">{formatDateRange(exp.startDate, exp.endDate)}</span>
                               </div>
                               <div className="flex items-center gap-1">
-                                <span className="hidden sm:inline">•</span>
+                                <span className="hidden sm:inline">|</span>
                                 <span>{calculateDuration(exp.startDate, exp.endDate)}</span>
                               </div>
                               <div className="flex items-center gap-1">
@@ -168,7 +172,7 @@ const Experience = () => {
                               <ul className="space-y-1 sm:space-y-1.5 text-[11px] sm:text-xs md:text-sm text-light-text-secondary dark:text-dark-text-secondary">
                                 {exp.responsibilities.slice(0, 3).map((item, i) => (
                                   <li key={i} className="flex items-start gap-1.5 sm:gap-2">
-                                    <span className="text-primary-500 mt-0.5 flex-shrink-0">•</span>
+                                    <ArrowRight className="w-3 h-3 text-primary-500 mt-0.5 flex-shrink-0" />
                                     <span className="leading-relaxed">{item}</span>
                                   </li>
                                 ))}
@@ -184,7 +188,7 @@ const Experience = () => {
                               <ul className="space-y-1 sm:space-y-1.5 text-[11px] sm:text-xs md:text-sm text-primary-600 dark:text-primary-400">
                                 {exp.highlights.map((item, i) => (
                                   <li key={i} className="flex items-start gap-1.5 sm:gap-2">
-                                    <span className="flex-shrink-0 mt-0.5">✓</span>
+                                    <Check className="w-3 h-3 flex-shrink-0 mt-0.5" />
                                     <span className="leading-relaxed">{item}</span>
                                   </li>
                                 ))}
