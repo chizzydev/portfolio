@@ -102,7 +102,7 @@ export const projects = [
     },
   ],
   links: {
-    live: 'https://ecommerce-store-chi-ashy.vercel.app',
+    live: 'https://online-shopping-store-one.vercel.app/',
     github: 'https://github.com/chizzydev/ecommerce-store',
     demo: '', 
   },
