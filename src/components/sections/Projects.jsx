@@ -8,7 +8,6 @@ import Button from '../ui/Button';
 import Modal, { ModalBody } from '../ui/Modal';
 import AnimatedSection, { StaggeredList } from '../common/AnimatedSection';
 import {
-  projects,
   projectCategories,
   getProjectsByCategory
 } from '../../data/projects';
@@ -70,7 +69,22 @@ const Projects = () => {
                 >
                   {/* Image */}
                   <div className="relative overflow-hidden bg-gradient-to-br from-primary-500 to-accent-500 aspect-video">
-                    {project.image ? (
+                    {project.images?.length > 1 ? (
+                      <div className="grid h-full grid-cols-2 gap-2 bg-slate-950 p-3 sm:p-4">
+                        {project.images.slice(0, 2).map((image) => (
+                          <div
+                            key={image}
+                            className="overflow-hidden rounded-xl bg-white shadow-2xl ring-1 ring-white/15"
+                          >
+                            <img
+                              src={image}
+                              alt={project.title}
+                              className="h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                            />
+                          </div>
+                        ))}
+                      </div>
+                    ) : project.image ? (
                       <img
                         src={project.image}
                         alt={project.title}
@@ -242,7 +256,22 @@ const Projects = () => {
           title={selectedProject.title}
         >
           <ModalBody>
-            {selectedProject.image && (
+            {selectedProject.images?.length > 0 ? (
+              <div className="mb-6 grid gap-4 sm:grid-cols-2">
+                {selectedProject.images.map((image) => (
+                  <div
+                    key={image}
+                    className="overflow-hidden rounded-xl border border-light-border bg-light-bg dark:border-dark-border dark:bg-dark-bg"
+                  >
+                    <img
+                      src={image}
+                      alt={selectedProject.title}
+                      className="h-full max-h-[520px] w-full object-contain"
+                    />
+                  </div>
+                ))}
+              </div>
+            ) : selectedProject.image && (
               <img
                 src={selectedProject.image}
                 alt={selectedProject.title}
