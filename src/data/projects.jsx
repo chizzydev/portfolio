@@ -195,37 +195,6 @@ export const projects = [
   featured: true, 
   status: 'completed',
 },
-
-  // PLACEHOLDER PROJECT 2 - To be replace this with a real project
-  /** {
-    id: 'project-3',
-    title: 'Your Next Project',
-    description: 'Brief description of your project goes here. What problem does it solve?',
-    longDescription: 'Detailed description explaining the project in depth, the challenges you faced, technologies used, and the impact of the solution.',
-    category: 'web-app',
-    image: '/projects/project-3.png', // Add your screenshot
-    techStack: ['React', 'Tailwind CSS', 'Other Tech'],
-    features: [
-      'Key feature 1',
-      'Key feature 2',
-      'Key feature 3',
-      'Key feature 4',
-    ],
-    challenges: [
-      {
-        problem: 'Challenge description',
-        solution: 'How you solved it',
-      },
-    ],
-    links: {
-      live: '',
-      github: '',
-      demo: '',
-    },
-    date: '2025-02',
-    featured: false,
-    status: 'planned',
-  }, */
 ];
 
 export const projectsByCategory = {
@@ -235,19 +204,11 @@ export const projectsByCategory = {
   'open-source': projects.filter(p => p.category === 'open-source'),
 };
 
-/**
- * Featured projects (shown first)
- */
+
 export const featuredProjects = projects.filter(p => p.featured);
 
-/**
- * Completed projects
- */
 export const completedProjects = projects.filter(p => p.status === 'completed');
 
-/**
- * Projects statistics
- */
 export const projectStats = {
   total: projects.length,
   completed: completedProjects.length,
@@ -256,7 +217,6 @@ export const projectStats = {
 };
 
 /**
- * Helper function to get project by ID
  * @param {string} id - Project ID
  * @returns {Object|null} Project object or null
  */
@@ -265,7 +225,6 @@ export const getProjectById = (id) => {
 };
 
 /**
- * Helper function to get projects by category
  * @param {string} category - Category name
  * @returns {Array} Array of projects in category
  */
@@ -275,7 +234,6 @@ export const getProjectsByCategory = (category) => {
 };
 
 /**
- * Helper function to get projects by tech stack
  * @param {string} tech - Technology name
  * @returns {Array} Array of projects using that tech
  */
@@ -286,7 +244,6 @@ export const getProjectsByTech = (tech) => {
 };
 
 /**
- * Helper function to get recent projects
  * @param {number} limit - Number of projects to return
  * @returns {Array} Array of recent projects
  */
@@ -297,7 +254,6 @@ export const getRecentProjects = (limit = 3) => {
 };
 
 /**
- * Helper function to filter projects by status
  * @param {string} status - Project status
  * @returns {Array} Array of projects with that status
  */
@@ -305,14 +261,8 @@ export const getProjectsByStatus = (status) => {
   return projects.filter(project => project.status === status);
 };
 
-/**
- * All unique technologies used across projects
- */
 export const allTechnologies = [...new Set(projects.flatMap(p => p.techStack))].sort();
 
-/**
- * Project categories information
- */
 export const projectCategories = [
   {
     id: 'all',

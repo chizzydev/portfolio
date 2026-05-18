@@ -1,9 +1,6 @@
-// Reusable Input component for forms
 import { forwardRef } from 'react';
 
 /**
- * Input Component
- * 
  * @param {Object} props - Component props
  * @param {string} props.type - Input type (text, email, password, number, tel, url, etc.)
  * @param {string} props.label - Label text
@@ -38,27 +35,21 @@ const Input = forwardRef(({
   onChange,
   ...props
 }, ref) => {
-  // Container styles
+  
   const containerStyles = fullWidth ? 'w-full' : '';
 
-  // Input base styles
   const baseInputStyles = 'input-base w-full px-4 py-3 rounded-lg border transition-all duration-200 focus:outline-none focus:ring-2';
 
-  // Input state styles
   const stateStyles = error
     ? 'border-red-500 focus:border-red-500 focus:ring-red-500'
     : 'border-light-border dark:border-dark-border focus:border-primary-500 focus:ring-primary-500';
 
-  // Background styles
   const bgStyles = 'bg-light-bg dark:bg-dark-bg';
 
-  // Text styles
   const textStyles = 'text-light-text-primary dark:text-dark-text-primary placeholder:text-light-text-tertiary dark:placeholder:text-dark-text-tertiary';
 
-  // Disabled styles
   const disabledStyles = disabled ? 'opacity-50 cursor-not-allowed' : '';
 
-  // Icon padding adjustments
   const iconPadding = leftIcon && rightIcon
     ? 'pl-12 pr-12'
     : leftIcon

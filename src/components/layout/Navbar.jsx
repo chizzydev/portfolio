@@ -6,14 +6,12 @@ import Button from '../ui/Button';
 import { NAV_ITEMS, PERSONAL_INFO } from '../../utils/constants';
 
 /**
- * Navbar Component
- * 
+ 
  * @param {Object} props - Component props
  * @param {string} props.theme - Current theme ('light' or 'dark')
  * @param {Function} props.toggleTheme - Function to toggle theme
  */
 
-// Icon mapping for navigation items
 const NAV_ICONS = {
   home: Home,
   about: User,
@@ -33,23 +31,18 @@ const Navbar = ({ theme, toggleTheme }) => {
   const [touchStart, setTouchStart] = useState(null);
   const [touchEnd, setTouchEnd] = useState(null);
 
-  // Minimum swipe distance (in px)
   const minSwipeDistance = 50;
 
-  // Handle scroll to detect active section and navbar background
   useEffect(() => {
     const handleScroll = () => {
-      // Add background when scrolled
       setIsScrolled(window.scrollY > 20);
 
-      // Detect active section
       const sections = NAV_ITEMS.map(item => item.id);
       
       for (const sectionId of sections) {
         const element = document.getElementById(sectionId);
         if (element) {
           const rect = element.getBoundingClientRect();
-          // Check if section is in viewport (with offset for navbar height)
           if (rect.top <= 100 && rect.bottom >= 100) {
             setActiveSection(sectionId);
             break;
@@ -59,12 +52,11 @@ const Navbar = ({ theme, toggleTheme }) => {
     };
 
     window.addEventListener('scroll', handleScroll);
-    handleScroll(); // Check initial state
+    handleScroll();
 
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Close mobile menu when window resizes to desktop
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth >= 768 && isOpen) {
@@ -76,7 +68,6 @@ const Navbar = ({ theme, toggleTheme }) => {
     return () => window.removeEventListener('resize', handleResize);
   }, [isOpen]);
 
-  // Prevent body scroll when mobile menu is open
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = 'hidden';
@@ -89,7 +80,6 @@ const Navbar = ({ theme, toggleTheme }) => {
     };
   }, [isOpen]);
 
-  // Handle touch events for swipe
   const onTouchStart = (e) => {
     setTouchEnd(null);
     setTouchStart(e.targetTouches[0].clientX);
@@ -105,17 +95,15 @@ const Navbar = ({ theme, toggleTheme }) => {
     const distance = touchStart - touchEnd;
     const isRightSwipe = distance < -minSwipeDistance;
     
-    // Close menu on right swipe
     if (isRightSwipe && isOpen) {
       setIsOpen(false);
     }
   };
 
-  // Smooth scroll to section
   const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId);
     if (element) {
-      const offset = 80; // Navbar height
+      const offset = 80; 
       const elementPosition = element.getBoundingClientRect().top;
       const offsetPosition = elementPosition + window.pageYOffset - offset;
 
@@ -125,7 +113,6 @@ const Navbar = ({ theme, toggleTheme }) => {
       });
     }
     
-    // Close mobile menu after clicking
     setIsOpen(false);
   };
 
@@ -143,7 +130,6 @@ const Navbar = ({ theme, toggleTheme }) => {
       >
         <div className="container-custom">
           <div className="flex items-center justify-between h-20">
-            {/* Logo */}
             <a
               href="#home"
               onClick={(e) => {
@@ -169,9 +155,7 @@ const Navbar = ({ theme, toggleTheme }) => {
               </span>
             </a>
 
-            {/* Desktop Navigation */}
             <div className="hidden md:flex items-center gap-8">
-              {/* Nav Links */}
               <ul className="flex items-center gap-6">
                 {NAV_ITEMS.map((item) => (
                   <li key={item.id}>
@@ -192,7 +176,6 @@ const Navbar = ({ theme, toggleTheme }) => {
                     >
                       {item.label}
                       
-                      {/* Active indicator */}
                       {activeSection === item.id && (
                         <span className="
                           absolute -bottom-1 left-0 right-0 h-0.5 
@@ -205,12 +188,8 @@ const Navbar = ({ theme, toggleTheme }) => {
                 ))}
               </ul>
 
-              {/* Actions */}
               <div className="flex items-center gap-3">
-                {/* Theme Toggle */}
                 <ThemeToggle theme={theme} toggleTheme={toggleTheme} />
-
-                {/* Resume Download */}
                 <Button
                   variant="primary"
                   size="sm"
@@ -222,12 +201,8 @@ const Navbar = ({ theme, toggleTheme }) => {
               </div>
             </div>
 
-            {/* Mobile Menu Button & Theme Toggle */}
             <div className="flex md:hidden items-center gap-3">
-              {/* Mobile Theme Toggle */}
               <ThemeToggle theme={theme} toggleTheme={toggleTheme} />
-
-              {/* Mobile Menu Toggle */}
               <button
                 onClick={() => setIsOpen(!isOpen)}
                 className="
@@ -251,7 +226,6 @@ const Navbar = ({ theme, toggleTheme }) => {
         </div>
       </nav>
 
-      {/* Mobile Menu Overlay - Behind Menu */}
       {isOpen && (
         <div
           className="md:hidden fixed inset-0 bg-black/60 backdrop-blur-sm z-[45]"
@@ -260,7 +234,6 @@ const Navbar = ({ theme, toggleTheme }) => {
         />
       )}
 
-      {/* Mobile Menu - Full Screen */}
       <div
         className={`
           md:hidden fixed inset-0 z-[48]
@@ -275,7 +248,7 @@ const Navbar = ({ theme, toggleTheme }) => {
         onTouchMove={onTouchMove}
         onTouchEnd={onTouchEnd}
       >
-        {/* Menu Header */}
+
         <div className="fixed top-0 left-0 right-0 h-20 bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-800 flex items-center justify-between px-6 z-[49]">
           <a
             href="#home"
@@ -307,10 +280,8 @@ const Navbar = ({ theme, toggleTheme }) => {
           </div>
         </div>
 
-        {/* Menu Content - Scrollable */}
         <div className="h-full overflow-y-auto pt-20">
           <div className="py-8 px-6">
-            {/* Mobile Nav Links */}
             <ul className="space-y-4">
               {NAV_ITEMS.map((item) => {
                 const Icon = NAV_ICONS[item.id] || Home;
@@ -339,8 +310,7 @@ const Navbar = ({ theme, toggleTheme }) => {
                 );
               })}
             </ul>
-
-            {/* Mobile Resume Button */}
+            
             <div className="mt-8">
               <Button
                 variant="primary"

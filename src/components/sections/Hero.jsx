@@ -1,4 +1,3 @@
-// Hero section - Landing page
 import { ArrowRight, Download, Mail, Github, Linkedin } from 'lucide-react';
 import Button from '../ui/Button';
 import { PERSONAL_INFO } from '../../utils/constants';
@@ -40,21 +39,16 @@ const Hero = () => {
 
   return (
    <section className="relative min-h-[calc(88svh-5rem)] sm:min-h-[calc(92svh-5rem)] lg:min-h-[calc(100svh-5rem)] flex items-center justify-center overflow-hidden bg-light-bg dark:bg-dark-bg py-8 sm:py-12 lg:py-16">
-{/* Background Decorations */}
 <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {/* Gradient Orbs */}
         <div className="absolute top-1/4 -left-48 w-96 h-96 bg-primary-500/20 dark:bg-primary-500/10 rounded-full blur-3xl animate-pulse-slow" />
         <div className="absolute bottom-1/4 -right-48 w-96 h-96 bg-accent-500/20 dark:bg-accent-500/10 rounded-full blur-3xl animate-pulse-slow animation-delay-400" />
-        
-        {/* Grid Pattern */}
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:4rem_4rem]" />
       </div>
 
-      {/* Content */}
       <div className="container-custom relative z-10 w-full">
         <div className="max-w-5xl mx-auto">
           <div className="text-center space-y-6 sm:space-y-8 animate-fade-up">
-            {/* Main Heading */}
+            
             <div className="space-y-4">
               <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-light-text-primary dark:text-dark-text-primary leading-tight">
                 Hey, I'm { ' ' }
@@ -68,7 +62,7 @@ const Hero = () => {
               </h2>
             </div>
 
-            {/* Tagline */}
+            
             <p className="text-lg md:text-xl text-light-text-secondary dark:text-dark-text-secondary max-w-2xl mx-auto leading-relaxed">
               {PERSONAL_INFO.tagline}
             </p>
@@ -77,7 +71,6 @@ const Hero = () => {
               Currently building Decide, a phone intelligence platform spanning website, backend APIs, and Android app delivery.
             </p>
 
-            {/* Featured Tech Stack */}
             <div className="flex flex-wrap items-center justify-center gap-3 pt-4">
               {featuredStack.map((tech) => (
                 <span
@@ -89,7 +82,6 @@ const Hero = () => {
               ))}
             </div>
 
-            {/* CTAs */}
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-8">
               <Button
                 variant="primary"
@@ -119,7 +111,6 @@ const Hero = () => {
               </Button>
             </div>
 
-            {/* Social Links */}
             <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 pt-8">
               <p className="text-sm text-light-text-tertiary dark:text-dark-text-tertiary">
                 Connect with me:

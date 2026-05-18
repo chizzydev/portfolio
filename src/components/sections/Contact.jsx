@@ -1,4 +1,3 @@
-// Contact section - Contact form and information
 import { useState } from 'react';
 import { Mail, Phone, MapPin, Send, CheckCircle, AlertCircle } from 'lucide-react';
 import SectionTitle from '../ui/SectionTitle';

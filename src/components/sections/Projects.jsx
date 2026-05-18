@@ -1,4 +1,3 @@
-// Projects section - Portfolio showcase
 import { useState } from 'react';
 import { ArrowRight, ExternalLink, Github, Play } from 'lucide-react';
 import SectionTitle from '../ui/SectionTitle';
@@ -55,7 +54,6 @@ const Projects = () => {
           </AnimatedSection>
         </div>
 
-        {/* ✅ PROJECTS GRID — FIXED */}
         <div className="max-w-6xl mx-auto">
           <StaggeredList staggerDelay={100}>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8">
@@ -67,7 +65,7 @@ const Projects = () => {
                   padding="none"
                   className="overflow-hidden group w-full"
                 >
-                  {/* Image */}
+                 
                   <div className="relative overflow-hidden bg-gradient-to-br from-primary-500 to-accent-500 aspect-video">
                     {project.images?.length > 1 ? (
                       <div className="grid h-full grid-cols-2 gap-2 bg-slate-950 p-3 sm:p-4">
@@ -162,7 +160,6 @@ const Projects = () => {
                     </div>
                   </div>
 
-                  {/* Info */}
                   <div className="p-5 space-y-4">
                     <CardTitle className="text-lg sm:text-xl font-bold group-hover:text-primary-500 transition-colors">
                       {project.title}

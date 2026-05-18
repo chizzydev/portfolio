@@ -2,7 +2,6 @@
 import { Sun, Moon } from 'lucide-react';
 
 /**
- * ThemeToggle Component
  * 
  * @param {Object} props - Component props
  * @param {string} props.theme - Current theme ('light' or 'dark')
@@ -19,7 +18,6 @@ const ThemeToggle = ({
 }) => {
   const isDark = theme === 'dark';
 
-  // Icon variant - just the icon button
   if (variant === 'icon') {
     return (
       <button
@@ -35,7 +33,7 @@ const ThemeToggle = ({
         aria-label={`Switch to ${isDark ? 'light' : 'dark'} mode`}
         title={`Switch to ${isDark ? 'light' : 'dark'} mode`}
       >
-        {/* Sun icon (shows in dark mode) */}
+        
         <Sun 
           className={`
             w-5 h-5 absolute inset-0 m-auto
@@ -44,7 +42,6 @@ const ThemeToggle = ({
           `}
         />
         
-        {/* Moon icon (shows in light mode) */}
         <Moon 
           className={`
             w-5 h-5 absolute inset-0 m-auto
@@ -56,7 +53,6 @@ const ThemeToggle = ({
     );
   }
 
-  // Button variant - with text label
   if (variant === 'button') {
     return (
       <button
@@ -91,10 +87,6 @@ const ThemeToggle = ({
   return null;
 };
 
-/**
- * ThemeToggleSwitch Component
- * Toggle switch style theme switcher
- */
 export const ThemeToggleSwitch = ({ 
   theme, 
   toggleTheme,
@@ -116,7 +108,7 @@ export const ThemeToggleSwitch = ({
       aria-checked={isDark}
       aria-label={`Switch to ${isDark ? 'light' : 'dark'} mode`}
     >
-      {/* Switch toggle */}
+    
       <span
         className={`
           inline-flex items-center justify-center
@@ -135,10 +127,6 @@ export const ThemeToggleSwitch = ({
   );
 };
 
-/**
- * ThemeToggleDropdown Component
- * Dropdown with theme options
- */
 export const ThemeToggleDropdown = ({ 
   theme, 
   toggleTheme,
@@ -167,7 +155,6 @@ export const ThemeToggleDropdown = ({
         </span>
       </button>
 
-      {/* Dropdown menu */}
       <div className="
         absolute right-0 mt-2 w-40 rounded-lg shadow-lg
         bg-light-card dark:bg-dark-card
@@ -207,10 +194,6 @@ export const ThemeToggleDropdown = ({
   );
 };
 
-/**
- * AnimatedThemeToggle Component
- * Theme toggle with smooth animated transition
- */
 export const AnimatedThemeToggle = ({ 
   theme, 
   toggleTheme,
@@ -231,7 +214,7 @@ export const AnimatedThemeToggle = ({
       `}
       aria-label={`Switch to ${isDark ? 'light' : 'dark'} mode`}
     >
-      {/* Stars (visible in dark mode) */}
+    
       {isDark && (
         <>
           <span className="absolute top-2 left-2 w-1 h-1 bg-white rounded-full animate-pulse" />
@@ -240,7 +223,6 @@ export const AnimatedThemeToggle = ({
         </>
       )}
 
-      {/* Sun/Moon icon */}
       <div className="relative z-10">
         {isDark ? (
           <Moon className="w-5 h-5 text-yellow-200" />

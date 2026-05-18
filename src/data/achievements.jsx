@@ -1,22 +1,3 @@
-// Achievements, certifications, and accomplishments
-// PLACEHOLDER data - replace with your actual achievements
-
-/**
- * Achievement data structure
- * Each achievement includes:
- * - id: Unique identifier
- * - type: Type of achievement (certification, award, contribution, metric)
- * - title: Achievement title
- * - issuer: Organization that issued the achievement
- * - description: Brief description
- * - date: Date achieved (YYYY-MM format)
- * - credentialId: Credential ID (for certifications)
- * - credentialUrl: Link to verify credential
- * - image: Path to certificate/badge image
- * - skills: Skills demonstrated/learned
- * - featured: Whether to feature this achievement
- */
-
 export const achievements = [
   {
   id: 'alx-aice-cert',
@@ -39,116 +20,8 @@ export const achievements = [
   ],
   featured: true,
 },
-
-  // EXAMPLE 1 - Online Course Certification
- /*{
-    id: 'react-course',
-    type: 'certification',
-    title: 'React - The Complete Guide',
-    issuer: 'Youtube',
-    description: 'Comprehensive React course covering hooks, context, routing, and modern React patterns.',
-    date: '2024-11',
-    //credentialId: 'UC-XXXXXXXX',
-    credentialUrl: '', // Add your certificate link
-    //image: '/achievements/react-cert.png', // Add certificate image to public/achievements/
-    skills: ['React', 'React Hooks', 'React Router', 'Context API', 'Redux'],
-    featured: true,
-  },
-
-  // EXAMPLE 2 - JavaScript Certification
-  {
-    id: 'javascript-cert',
-    type: 'certification',
-    title: 'JavaScript Algorithms and Data Structures',
-    issuer: 'Youtube',
-    description: 'Completed comprehensive JavaScript course covering ES6+, algorithms, and data structures.',
-    date: '2025-09',
-    credentialId: 'fcc-XXXXXXXX',
-    //credentialUrl: 'https://www.freecodecamp.org/certification/yourusername/javascript-algorithms-and-data-structures',
-    //image: '/achievements/javascript-cert.png',
-    skills: ['JavaScript', 'ES6+', 'Algorithms', 'Data Structures'],
-    featured: true,
-  },
-
-  // EXAMPLE 3 - Responsive Web Design
-  {
-    id: 'responsive-web-design',
-    type: 'certification',
-    title: 'Responsive Web Design',
-    issuer: 'Youtube',
-    description: 'Mastered responsive web design principles, flexbox, CSS Grid, and accessibility.',
-    date: '2023-01',
-    //credentialId: 'fcc-XXXXXXXX',
-    //credentialUrl: 'https://www.freecodecamp.org/certification/yourusername/responsive-web-design',
-    //image: '/achievements/responsive-cert.png',
-    skills: ['HTML5', 'CSS3', 'Responsive Design', 'Flexbox', 'CSS Grid', 'Accessibility'],
-    featured: true,
-  },
-
-  // EXAMPLE 4 - Tailwind CSS Course
-  {
-    id: 'tailwind-course',
-    type: 'certification',
-    title: 'Tailwind CSS From Scratch',
-    issuer: 'Youtube',
-    description: 'Learned utility-first CSS with Tailwind, including responsive design and customization.',
-    date: '2024-10',
-    //credentialId: 'UC-XXXXXXXX',
-    //credentialUrl: '',
-    //image: '/achievements/tailwind-cert.png',
-    skills: ['Tailwind CSS', 'CSS', 'Responsive Design', 'UI Development'],
-    featured: false,
-  },
-
-  // EXAMPLE 5 - Git & GitHub
-  {
-    id: 'git-github',
-    type: 'certification',
-    title: 'Git & GitHub - Version Control',
-    issuer: 'Youtube',
-    description: 'Mastered Git workflows, branching strategies, and GitHub collaboration.',
-    date: '2025-07',
-    //credentialId: 'UC-XXXXXXXX',
-    credentialUrl: '',
-    //image: '/achievements/git-cert.png',
-    skills: ['Git', 'GitHub', 'Version Control', 'Collaboration'],
-    featured: false,
-  },
-
-  // EXAMPLE 6 - Project Metric Achievement
-  /*{
-    id: 'portfolio-metrics',
-    type: 'metric',
-    title: '90+ Lighthouse Score',
-    issuer: 'Portfolio Website',
-    description: 'Achieved 90+ scores across all Lighthouse metrics (Performance, Accessibility, Best Practices, SEO).',
-    date: '2025-01',
-    credentialId: null,
-    credentialUrl: null,
-    image: null,
-    skills: ['Performance Optimization', 'Accessibility', 'SEO', 'Web Development'],
-    featured: true,
-  }, */
-
-  // EXAMPLE 7 - GitHub Contribution
-  /*{
-    id: 'github-activity',
-    type: 'contribution',
-    title: '100+ GitHub Contributions',
-    issuer: 'GitHub',
-    description: 'Maintained consistent coding activity with 100+ contributions to open source and personal projects.',
-    date: '2024-12',
-    credentialId: null,
-    credentialUrl: 'https://github.com/yourusername',
-    image: null,
-    skills: ['Git', 'Open Source', 'Collaboration'],
-    featured: false,
-  }, */
 ];
 
-/**
- * Achievements organized by type
- */
 export const achievementsByType = {
   all: achievements,
   certification: achievements.filter(a => a.type === 'certification'),
@@ -157,14 +30,8 @@ export const achievementsByType = {
   metric: achievements.filter(a => a.type === 'metric'),
 };
 
-/**
- * Featured achievements (shown prominently)
- */
 export const featuredAchievements = achievements.filter(a => a.featured);
 
-/**
- * Recent achievements (last 6 months)
- */
 export const recentAchievements = achievements.filter(a => {
   const achievementDate = new Date(a.date);
   const sixMonthsAgo = new Date();
@@ -172,16 +39,10 @@ export const recentAchievements = achievements.filter(a => {
   return achievementDate >= sixMonthsAgo;
 });
 
-/**
- * Achievements sorted by date (most recent first)
- */
 export const achievementsByDate = [...achievements].sort((a, b) => {
   return new Date(b.date) - new Date(a.date);
 });
 
-/**
- * Achievement type configuration
- */
 export const achievementTypes = {
   certification: {
     label: 'Certification',
@@ -209,9 +70,6 @@ export const achievementTypes = {
   },
 };
 
-/**
- * Popular certification platforms
- */
 export const certificationPlatforms = [
   {
     name: 'Youtube',
@@ -234,9 +92,7 @@ export const certificationPlatforms = [
   }
 ];
 
-/**
- * Achievement statistics
- */
+
 export const achievementStats = {
   total: achievements.length,
   featured: featuredAchievements.length,
@@ -251,7 +107,6 @@ export const achievementStats = {
 };
 
 /**
- * Helper function to get achievement by ID
  * @param {string} id - Achievement ID
  * @returns {Object|null} Achievement object or null
  */
@@ -260,7 +115,6 @@ export const getAchievementById = (id) => {
 };
 
 /**
- * Helper function to get achievements by type
  * @param {string} type - Achievement type
  * @returns {Array} Array of achievements of that type
  */
@@ -270,7 +124,6 @@ export const getAchievementsByType = (type) => {
 };
 
 /**
- * Helper function to get achievements by issuer
  * @param {string} issuer - Issuer name
  * @returns {Array} Array of achievements from that issuer
  */
@@ -281,7 +134,6 @@ export const getAchievementsByIssuer = (issuer) => {
 };
 
 /**
- * Helper function to get achievements by skill
  * @param {string} skill - Skill name
  * @returns {Array} Array of achievements teaching that skill
  */
@@ -292,7 +144,6 @@ export const getAchievementsBySkill = (skill) => {
 };
 
 /**
- * Helper function to get achievements from a specific year
  * @param {number} year - Year
  * @returns {Array} Array of achievements from that year
  */
@@ -302,14 +153,8 @@ export const getAchievementsByYear = (year) => {
   );
 };
 
-/**
- * All unique skills from achievements
- */
 export const allAchievementSkills = [...new Set(achievements.flatMap(a => a.skills))].sort();
 
-/**
- * Achievements grouped by year
- */
 export const achievementsByYear = achievements.reduce((acc, achievement) => {
   const year = new Date(achievement.date).getFullYear();
   if (!acc[year]) {
@@ -319,9 +164,7 @@ export const achievementsByYear = achievements.reduce((acc, achievement) => {
   return acc;
 }, {});
 
-/**
- * Years with achievements (sorted descending)
- */
+
 export const yearsWithAchievements = Object.keys(achievementsByYear)
   .map(Number)
   .sort((a, b) => b - a);

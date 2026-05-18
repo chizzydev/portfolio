@@ -150,7 +150,6 @@ const Textarea = forwardRef(({
         </p>
       )}
 
-      {/* Helper Text */}
       {!error && helperText && (
         <p
           id={`${props.id}-helper`}
@@ -160,7 +159,6 @@ const Textarea = forwardRef(({
         </p>
       )}
 
-      {/* Character Count (below textarea, if not in label) */}
       {!error && !helperText && showCount && maxLength && !label && (
         <div className="mt-2 flex justify-end">
           <span
@@ -180,13 +178,8 @@ const Textarea = forwardRef(({
   );
 });
 
-// Display name for debugging
 Textarea.displayName = 'Textarea';
 
-/**
- * AutoResizeTextarea Component
- * Textarea that automatically grows with content
- */
 export const AutoResizeTextarea = forwardRef(({
   value = '',
   onChange,
@@ -222,10 +215,6 @@ export const AutoResizeTextarea = forwardRef(({
 
 AutoResizeTextarea.displayName = 'AutoResizeTextarea';
 
-/**
- * MessageTextarea Component
- * Specialized textarea for messages/comments
- */
 export const MessageTextarea = forwardRef(({
   placeholder = 'Write your message...',
   maxLength = 1000,
@@ -246,5 +235,4 @@ export const MessageTextarea = forwardRef(({
 
 MessageTextarea.displayName = 'MessageTextarea';
 
-// Export Textarea as default and specialized textareas as named exports
 export default Textarea;

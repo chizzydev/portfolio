@@ -1,9 +1,6 @@
-// Reusable Button component with multiple variants
 import { forwardRef } from 'react';
 
 /**
- * Button Component
- * 
  * @param {Object} props - Component props
  * @param {string} props.variant - Button style variant (primary, secondary, outline, ghost)
  * @param {string} props.size - Button size (sm, md, lg)
@@ -32,10 +29,8 @@ const Button = forwardRef(({
   type = 'button',
   ...props
 }, ref) => {
-  // Base styles (always applied)
   const baseStyles = 'btn-base inline-flex items-center justify-center gap-2 font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed';
 
-  // Variant styles
   const variants = {
     primary: 'bg-primary-500 hover:bg-primary-600 text-white focus:ring-primary-500 shadow-sm hover:shadow-md',
     secondary: 'bg-accent-500 hover:bg-accent-600 text-white focus:ring-accent-500 shadow-sm hover:shadow-md',
@@ -44,20 +39,16 @@ const Button = forwardRef(({
     danger: 'bg-red-500 hover:bg-red-600 text-white focus:ring-red-500 shadow-sm hover:shadow-md',
   };
 
-  // Size styles
   const sizes = {
     sm: 'px-3 py-1.5 text-sm rounded-md',
     md: 'px-4 py-2.5 text-base rounded-lg',
     lg: 'px-6 py-3 text-lg rounded-lg',
   };
 
-  // Width styles
   const widthStyles = fullWidth ? 'w-full' : '';
 
-  // Loading styles
   const loadingStyles = loading ? 'opacity-70 cursor-wait' : '';
 
-  // Combine all styles
   const buttonStyles = `
     ${baseStyles}
     ${variants[variant]}
@@ -67,7 +58,6 @@ const Button = forwardRef(({
     ${className}
   `.trim().replace(/\s+/g, ' ');
 
-  // Handle click with loading state
   const handleClick = (e) => {
     if (loading || disabled) return;
     if (onClick) onClick(e);
@@ -83,14 +73,13 @@ const Button = forwardRef(({
       aria-disabled={disabled || loading}
       {...props}
     >
-      {/* Left Icon */}
+    
       {leftIcon && !loading && (
         <span className="flex-shrink-0">
           {leftIcon}
         </span>
       )}
 
-      {/* Loading Spinner */}
       {loading && (
         <svg 
           className="animate-spin h-5 w-5 flex-shrink-0" 
@@ -114,12 +103,10 @@ const Button = forwardRef(({
         </svg>
       )}
 
-      {/* Button Text */}
       <span>
         {children}
       </span>
 
-      {/* Right Icon */}
       {rightIcon && !loading && (
         <span className="flex-shrink-0">
           {rightIcon}
@@ -129,7 +116,6 @@ const Button = forwardRef(({
   );
 });
 
-// Display name for debugging
 Button.displayName = 'Button';
 
 export default Button;

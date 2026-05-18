@@ -1,0 +1,58 @@
+CHIZARAM CHUKWUKA ANTHONY
+Full-Stack JavaScript Developer | Product Engineer
+Nnewi, Nigeria | +234 912 186 4819 | chukwukachizaram150@gmail.com
+GitHub: https://github.com/chizzy250 | LinkedIn: https://www.linkedin.com/in/chizaram-chukwuka-b331b6222 | Twitter/X: https://twitter.com/Chizaram250
+
+SUMMARY
+Full-stack JavaScript developer building production web, mobile, backend, and data-driven products. I have shipped Decide, a Nigerian phone-buying intelligence platform across web, Android, backend APIs, scraping, price tracking, auth, admin tooling, SEO, security hardening, alerts, and marketplace intelligence. I am also building OfferSignal, a global ecommerce intelligence and technical trust product that combines competitor monitoring, Shopify-aware extraction, AI-assisted reports, evidence screenshots, trust audits, scheduled monitoring, agency workspaces, and payment-ready workflows. Strong fit for remote product engineering, frontend/full-stack roles, backend/API work, data automation, ecommerce tooling, and AI-assisted internal systems.
+
+CORE SKILLS
+- Frontend: React, Next.js, TypeScript, JavaScript ES6+, Tailwind CSS, HTML5, CSS3, responsive UI, mobile-first UX
+- Backend & Data: Node.js, Express.js, Next.js API routes, PostgreSQL, Supabase, Prisma ORM, REST APIs, server-side jobs
+- Automation & Intelligence: Playwright, Cheerio, scraping, price tracking, structured extraction, Shopify feeds, diffing, scheduled monitoring, AI report drafting
+- Mobile & Delivery: React Native, Expo, Android builds, EAS Build, Vercel, Git, GitHub, Postman, Resend, payment integrations
+- Quality & Security: SEO, metadata/schema, performance optimization, auth flows, security headers, rate limiting, abuse resistance, audit workflows
+
+EXPERIENCE
+Full-Stack JavaScript Developer | Self-Employed | Remote / Nnewi, Nigeria | June 2023 - Present
+- Build production-ready web applications and backend-backed product experiences from UI through APIs, auth, business logic, and deployment.
+- Translate product requirements into maintainable architecture, responsive interfaces, reliable workflows, and clean data models.
+- Delivered 5+ production-ready client projects that cannot be shown publicly due to client restrictions.
+- Consistently target 90+ Lighthouse scores, mobile responsiveness, usability, and production polish across shipped work.
+
+Founder / Full-Stack Engineer | Decide - Phone Buying Intelligence Platform | Nigeria / Remote | February 2026 - Present
+- Built and launched a web and Android product that helps Nigerian buyers compare phones using live prices, marketplace risk, alerts, watchlists, and buy-or-wait guidance.
+- Designed scraping and normalization pipelines for Jumia, Slot, and Jiji-style marketplace intelligence, including false-listing filtering and phone matching logic.
+- Implemented backend APIs, PostgreSQL data flows, admin dashboards, Google auth, feedback systems, price sync tools, security hardening, SEO metadata, schema, and mobile/web polish.
+- Built intelligence features beyond specs: price fairness, deal truth, market confidence, repair/resale context, gray-market caution, used-phone safety, and buyer-friendly recommendations.
+
+SELECTED PROJECTS
+OfferSignal - Ecommerce Intelligence & Technical Trust Infrastructure (In progress, 2026)
+Tech: Next.js, React, TypeScript, Supabase, PostgreSQL, Playwright, OpenAI, Resend, Paystack, Tailwind CSS, Cheerio, Vercel Cron, Supabase Storage
+- Built a two-offer product for ecommerce brands and agencies: Rival Briefs for recurring competitor intelligence and Technical Trust Reviews for store trust, performance, security, and conversion checks.
+- Implemented Shopify-aware monitoring with product feed pagination, collection discovery, product/variant normalization, currency extraction, stock status, compare-at pricing, catalog movement, and storefront messaging signals.
+- Created an AI Merchandising Analyst report format covering biggest move, revenue risk, competitive pressure, suggested response, what not to do, evidence strength, opportunity scoring, lifecycle labels, and merchant-specific strategy context.
+- Built evidence screenshots with Playwright, Supabase Storage fallback, retention metadata, highlighted evidence boxes, before/after pairing, admin previews, delete controls, signed hosted reports, and PDF-ready artifacts.
+- Added admin and agency workspaces: lead pipeline, report editor, quality gate, approval/send flow, scheduled monitoring, client folders, white-label fields, client strategy defaults, legal/respect controls, and payment readiness.
+
+Decide - Phone Buying Intelligence (Live product, 2026)
+Tech: Next.js, React Native/Expo, Node.js, Express.js, PostgreSQL, TypeScript, Tailwind CSS, Cheerio, Supabase, Sentry
+- Shipped a production web and Android product for Nigerian phone buyers with live prices, phone analysis, comparisons, alerts, watchlists, feedback, admin tools, and buyer guidance.
+- Built phone matching, price sync, marketplace intelligence, SEO/schema, auth, Android QA, security hardening, and admin workflows for ongoing product operations.
+- Positioned the product as buyer-regret prevention rather than a static phone catalog, with practical signals around used-market scams, gray-market risk, repair context, and alternatives.
+
+Full-Stack E-Commerce Platform (Completed, 2026)
+Tech: Next.js, TypeScript, PostgreSQL, Prisma, NextAuth.js, Stripe, Flutterwave, Redis, Tailwind CSS, Shadcn/ui, Resend, UploadThing
+- Built a production-ready ecommerce store with multi-currency support, payment integrations, admin dashboard, order/product management, auth, reviews, wishlist, cart, and inventory tracking.
+- Resolved serverless database pooling issues with PgBouncer and Prisma client patterns, and handled Vercel Edge constraints by moving auth protection into server-side layouts.
+- Implemented secure data access by relying on Prisma/PostgreSQL connections instead of exposing Supabase auto-generated table APIs publicly.
+
+EDUCATION
+B.Sc. Human Physiology | University of Calabar | 2019 - 2023
+Built strong foundations in research, data analysis, scientific documentation, critical thinking, and disciplined problem solving.
+
+CERTIFICATIONS
+- AI Career Essentials (AiCE), ALX Africa - 98.92% overall score, 2024
+
+PORTFOLIO NOTE
+Full project case studies are available on my portfolio and GitHub. I can also provide deeper walkthroughs of Decide, OfferSignal, and the ecommerce platform during interviews.

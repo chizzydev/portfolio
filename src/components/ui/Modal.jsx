@@ -1,10 +1,7 @@
-// Reusable Modal component for dialogs and overlays
 import { useEffect } from 'react';
 import { X } from 'lucide-react';
 
 /**
- * Modal Component
- * 
  * @param {Object} props - Component props
  * @param {boolean} props.isOpen - Whether modal is open
  * @param {Function} props.onClose - Close handler
@@ -30,7 +27,6 @@ const Modal = ({
   footer,
   className = '',
 }) => {
-  // Handle escape key press
   useEffect(() => {
     if (!isOpen || !closeOnEscape) return;
 
@@ -44,7 +40,6 @@ const Modal = ({
     return () => document.removeEventListener('keydown', handleEscape);
   }, [isOpen, closeOnEscape, onClose]);
 
-  // Prevent body scroll when modal is open
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = 'hidden';
@@ -57,10 +52,8 @@ const Modal = ({
     };
   }, [isOpen]);
 
-  // Don't render if not open
   if (!isOpen) return null;
 
-  // Size variants
   const sizes = {
     sm: 'max-w-md',
     md: 'max-w-lg',
@@ -70,7 +63,6 @@ const Modal = ({
     full: 'max-w-full mx-4',
   };
 
-  // Handle overlay click
   const handleOverlayClick = (e) => {
     if (closeOnOverlayClick && e.target === e.currentTarget) {
       onClose();
@@ -78,7 +70,6 @@ const Modal = ({
   };
 
   return (
-    // Overlay
     <div
       className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm animate-fade-in"
       onClick={handleOverlayClick}
@@ -86,7 +77,6 @@ const Modal = ({
       aria-modal="true"
       aria-labelledby={title ? 'modal-title' : undefined}
     >
-      {/* Modal Container */}
       <div
         className={`
           relative w-full ${sizes[size]} 
@@ -98,10 +88,10 @@ const Modal = ({
         `}
         onClick={(e) => e.stopPropagation()}
       >
-        {/* Header */}
+        
         {(title || showCloseButton) && (
           <div className="flex items-center justify-between p-6 border-b border-light-border dark:border-dark-border">
-            {/* Title */}
+            
             {title && (
               <h2
                 id="modal-title"
@@ -111,7 +101,6 @@ const Modal = ({
               </h2>
             )}
 
-            {/* Close Button */}
             {showCloseButton && (
               <button
                 onClick={onClose}
@@ -131,12 +120,10 @@ const Modal = ({
           </div>
         )}
 
-        {/* Content */}
         <div className="p-6 overflow-y-auto max-h-[calc(90vh-140px)]">
           {children}
         </div>
 
-        {/* Footer */}
         {footer && (
           <div className="p-6 border-t border-light-border dark:border-dark-border bg-light-bg dark:bg-dark-bg">
             {footer}
@@ -147,10 +134,6 @@ const Modal = ({
   );
 };
 
-/**
- * ModalHeader Component
- * Structured header for modal
- */
 export const ModalHeader = ({ title, subtitle, className = '' }) => {
   return (
     <div className={className}>
@@ -166,10 +149,6 @@ export const ModalHeader = ({ title, subtitle, className = '' }) => {
   );
 };
 
-/**
- * ModalBody Component
- * Structured body for modal
- */
 export const ModalBody = ({ children, className = '' }) => {
   return (
     <div className={`space-y-4 ${className}`}>
@@ -178,10 +157,6 @@ export const ModalBody = ({ children, className = '' }) => {
   );
 };
 
-/**
- * ModalFooter Component
- * Structured footer for modal with action buttons
- */
 export const ModalFooter = ({ children, className = '' }) => {
   return (
     <div className={`flex items-center justify-end gap-3 ${className}`}>
@@ -190,10 +165,6 @@ export const ModalFooter = ({ children, className = '' }) => {
   );
 };
 
-/**
- * ConfirmModal Component
- * Pre-configured confirmation modal
- */
 export const ConfirmModal = ({
   isOpen,
   onClose,
@@ -241,10 +212,6 @@ export const ConfirmModal = ({
   );
 };
 
-/**
- * ImageModal Component
- * Modal for displaying images
- */
 export const ImageModal = ({ isOpen, onClose, src, alt, title }) => {
   return (
     <Modal
@@ -265,5 +232,4 @@ export const ImageModal = ({ isOpen, onClose, src, alt, title }) => {
   );
 };
 
-// Export Modal as default and sub-components as named exports
 export default Modal;

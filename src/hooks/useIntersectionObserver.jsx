@@ -1,10 +1,6 @@
-// Custom hook for IntersectionObserver - scroll-triggered animations
 import { useEffect, useRef, useState } from 'react';
 
 /**
- * useIntersectionObserver Hook
- * Detects when an element enters the viewport
- * 
  * @param {Object} options - IntersectionObserver options
  * @param {number} options.threshold - Visibility threshold (0-1)
  * @param {string} options.rootMargin - Margin around viewport
@@ -65,9 +61,6 @@ const useIntersectionObserver = (options = {}) => {
 };
 
 /**
- * useOnScreen Hook
- * Simple boolean check if element is on screen
- * 
  * @param {Object} options - Configuration options
  * @returns {Array} [ref, isVisible]
  */
@@ -107,9 +100,6 @@ export const useOnScreen = (options = {}) => {
 };
 
 /**
- * useInViewport Hook
- * Get detailed viewport information
- * 
  * @param {Object} options - Configuration options
  * @returns {Object} Ref and viewport data
  */

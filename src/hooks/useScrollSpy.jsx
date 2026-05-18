@@ -1,12 +1,7 @@
-// Custom hook for scroll spy functionality
 import { useState, useEffect } from 'react';
 import { throttle } from '../utils/helpers';
 
 /**
- * useScrollSpy Hook
- * Detects which section is currently in viewport and returns active section ID
- * Useful for navbar active link highlighting
- * 
  * @param {Array<string>} sectionIds - Array of section IDs to track
  * @param {Object} options - Configuration options
  * @param {number} options.offset - Offset from top (e.g., navbar height)
@@ -23,21 +18,14 @@ const useScrollSpy = (sectionIds, options = {}) => {
   const [activeSection, setActiveSection] = useState(sectionIds[0] || '');
 
   useEffect(() => {
-    // Function to determine which section is active
     const handleScroll = throttle(() => {
-      // Get current scroll position
       const scrollPosition = window.scrollY + offset;
-
-      // Find the section that's currently in view
       let currentSection = sectionIds[0] || '';
 
       for (const sectionId of sectionIds) {
         const element = document.getElementById(sectionId);
-        
         if (element) {
           const { offsetTop, offsetHeight } = element;
-          
-          // Check if scroll position is within this section
           if (
             scrollPosition >= offsetTop &&
             scrollPosition < offsetTop + offsetHeight
@@ -48,17 +36,11 @@ const useScrollSpy = (sectionIds, options = {}) => {
         }
       }
 
-      // Update active section if it changed
       setActiveSection(currentSection);
     }, throttleMs);
 
-    // Add scroll event listener
     window.addEventListener('scroll', handleScroll);
-    
-    // Check initial position
     handleScroll();
-
-    // Cleanup
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
@@ -68,8 +50,6 @@ const useScrollSpy = (sectionIds, options = {}) => {
 };
 
 /**
- * useScrollSpyAdvanced Hook
- * Advanced scroll spy with more granular control
  * 
  * @param {Array<string>} sectionIds - Array of section IDs to track
  * @param {Object} options - Configuration options
@@ -85,7 +65,6 @@ export const useScrollSpyAdvanced = (sectionIds, options = {}) => {
   const [sectionsInView, setSectionsInView] = useState([]);
 
   useEffect(() => {
-    // IntersectionObserver approach (more modern)
     const observerOptions = {
       rootMargin,
       threshold,
@@ -103,10 +82,8 @@ export const useScrollSpyAdvanced = (sectionIds, options = {}) => {
         }
       });
 
-      // Update sections in view
       setSectionsInView(Array.from(inView));
 
-      // Set the first visible section as active
       if (inView.size > 0) {
         const firstInView = sectionIds.find(id => inView.has(id));
         if (firstInView) {
@@ -117,7 +94,6 @@ export const useScrollSpyAdvanced = (sectionIds, options = {}) => {
 
     const observer = new IntersectionObserver(callback, observerOptions);
 
-    // Observe all sections
     sectionIds.forEach((sectionId) => {
       const element = document.getElementById(sectionId);
       if (element) {
@@ -126,7 +102,6 @@ export const useScrollSpyAdvanced = (sectionIds, options = {}) => {
       }
     });
 
-    // Cleanup
     return () => {
       observer.disconnect();
     };
@@ -140,9 +115,6 @@ export const useScrollSpyAdvanced = (sectionIds, options = {}) => {
 };
 
 /**
- * useScrollPosition Hook
- * Track current scroll position
- * 
  * @param {number} throttleMs - Throttle scroll event (ms)
  * @returns {Object} Scroll position data
  */
@@ -165,7 +137,6 @@ export const useScrollPosition = (throttleMs = 100) => {
         y: currentScrollY,
       });
 
-      // Determine scroll direction
       if (currentScrollY > lastScrollY) {
         setScrollDirection('down');
       } else if (currentScrollY < lastScrollY) {
@@ -177,7 +148,6 @@ export const useScrollPosition = (throttleMs = 100) => {
 
     window.addEventListener('scroll', handleScroll);
     
-    // Get initial position
     handleScroll();
 
     return () => {

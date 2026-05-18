@@ -216,13 +216,11 @@ export const validateField = (fieldName, value, rules = {}) => {
   if (rules.alphanumeric && !isAlphanumeric(value)) {
     return `${fieldName} must contain only letters and numbers`;
   }
-  
-  // Check numeric
+ 
   if (rules.numeric && !isNumeric(value)) {
     return `${fieldName} must be a number`;
   }
   
-  // Check custom pattern
   if (rules.pattern && !matchesPattern(value, rules.pattern)) {
     return rules.patternMessage || `${fieldName} format is invalid`;
   }
@@ -231,25 +229,17 @@ export const validateField = (fieldName, value, rules = {}) => {
 };
 
 /**
- * Sanitizes and validates form input
  * @param {string} value - Input value
  * @returns {string} Sanitized value
  */
 export const sanitizeFormInput = (value) => {
-  // Remove leading/trailing whitespace
   let sanitized = value.trim();
-  
-  // Remove multiple consecutive spaces
   sanitized = sanitized.replace(/\s+/g, ' ');
-  
-  // Remove potentially dangerous characters for XSS prevention
   sanitized = sanitized.replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi, '');
-  
   return sanitized;
 };
 
 /**
- * Real-time validation helper for forms
  * @param {Object} formData - Current form data
  * @param {Object} validationRules - Rules for each field
  * @returns {Object} Validation errors object
@@ -271,7 +261,6 @@ export const validateForm = (formData, validationRules) => {
 };
 
 /**
- * Checks if form has any errors
  * @param {Object} errors - Errors object
  * @returns {boolean} True if no errors
  */
@@ -280,7 +269,6 @@ export const isFormValid = (errors) => {
 };
 
 /**
- * Gets first error message from errors object
  * @param {Object} errors - Errors object
  * @returns {string|null} First error message or null
  */
@@ -290,7 +278,6 @@ export const getFirstError = (errors) => {
 };
 
 /**
- * Validates file upload
  * @param {File} file - File to validate
  * @param {Object} options - Validation options
  * @returns {Object} Validation result
@@ -303,12 +290,10 @@ export const validateFile = (file, options = {}) => {
   
   const errors = [];
   
-  // Check file size
   if (file.size > maxSize) {
     errors.push(`File size must be less than ${maxSize / 1024 / 1024}MB`);
   }
   
-  // Check file type
   if (!allowedTypes.includes(file.type)) {
     errors.push(`File type must be one of: ${allowedTypes.join(', ')}`);
   }

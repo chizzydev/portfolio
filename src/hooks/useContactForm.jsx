@@ -1,12 +1,8 @@
-// Custom hook for contact form management
 import { useState } from 'react';
 import { validateContactForm } from '../utils/validators';
 import { sanitizeInput } from '../utils/helpers';
 
 /**
- * useContactForm Hook
- * Manages contact form state, validation, and submission
- * 
  * @param {Function} onSubmit - Callback function for form submission
  * @param {Object} initialValues - Initial form values
  * @returns {Object} Form state and handlers
@@ -25,7 +21,6 @@ const useContactForm = (onSubmit, initialValues = {}) => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState(null); // 'success', 'error', null
 
-  // Handle input change
   const handleChange = (e) => {
     const { name, value } = e.target;
     
@@ -34,7 +29,6 @@ const useContactForm = (onSubmit, initialValues = {}) => {
       [name]: sanitizeInput(value),
     }));
 
-    // Clear error for this field
     if (errors[name]) {
       setErrors(prev => ({
         ...prev,
@@ -43,7 +37,6 @@ const useContactForm = (onSubmit, initialValues = {}) => {
     }
   };
 
-  // Handle input blur (mark as touched)
   const handleBlur = (e) => {
     const { name } = e.target;
     
@@ -52,11 +45,9 @@ const useContactForm = (onSubmit, initialValues = {}) => {
       [name]: true,
     }));
 
-    // Validate this field on blur
     validateField(name);
   };
 
-  // Validate single field
   const validateField = (fieldName) => {
     const validation = validateContactForm({ [fieldName]: formData[fieldName] });
     
@@ -68,11 +59,9 @@ const useContactForm = (onSubmit, initialValues = {}) => {
     }
   };
 
-  // Handle form submission
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // Mark all fields as touched
     setTouched({
       name: true,
       email: true,
@@ -80,7 +69,6 @@ const useContactForm = (onSubmit, initialValues = {}) => {
       message: true,
     });
 
-    // Validate entire form
     const validation = validateContactForm(formData);
     
     if (!validation.isValid) {
@@ -88,27 +76,21 @@ const useContactForm = (onSubmit, initialValues = {}) => {
       return;
     }
 
-    // Clear errors
     setErrors({});
     setIsSubmitting(true);
     setSubmitStatus(null);
 
     try {
-      // Call the onSubmit callback
       await onSubmit(formData);
-      
-      // Success
       setSubmitStatus('success');
       resetForm();
     } catch {
-      // Error
       setSubmitStatus('error');
     } finally {
       setIsSubmitting(false);
     }
   };
 
-  // Reset form
   const resetForm = () => {
     setFormData({
       name: '',
@@ -120,7 +102,6 @@ const useContactForm = (onSubmit, initialValues = {}) => {
     setTouched({});
   };
 
-  // Set form values
   const setValues = (values) => {
     setFormData(prev => ({
       ...prev,
@@ -128,7 +109,6 @@ const useContactForm = (onSubmit, initialValues = {}) => {
     }));
   };
 
-  // Set single field value
   const setFieldValue = (name, value) => {
     setFormData(prev => ({
       ...prev,
@@ -136,7 +116,6 @@ const useContactForm = (onSubmit, initialValues = {}) => {
     }));
   };
 
-  // Set field error
   const setFieldError = (name, error) => {
     setErrors(prev => ({
       ...prev,
@@ -144,36 +123,25 @@ const useContactForm = (onSubmit, initialValues = {}) => {
     }));
   };
 
-  // Check if form is valid
   const isValid = Object.keys(errors).length === 0 && 
                   formData.name && 
                   formData.email && 
                   formData.message;
 
-  // Check if form is dirty (has unsaved changes)
   const isDirty = Object.values(formData).some(value => value.trim() !== '');
 
   return {
-    // Form data
     formData,
     values: formData,
-    
-    // Errors
     errors,
     touched,
-    
-    // Status
     isSubmitting,
     submitStatus,
     isValid,
     isDirty,
-    
-    // Handlers
     handleChange,
     handleBlur,
     handleSubmit,
-    
-    // Utilities
     resetForm,
     setValues,
     setFieldValue,
@@ -183,9 +151,6 @@ const useContactForm = (onSubmit, initialValues = {}) => {
 };
 
 /**
- * useFormField Hook
- * Hook for individual form field management
- * 
  * @param {string} initialValue - Initial field value
  * @param {Function} validate - Validation function
  * @returns {Object} Field state and handlers

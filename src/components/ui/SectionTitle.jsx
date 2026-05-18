@@ -1,9 +1,6 @@
-// Reusable SectionTitle component for consistent section headers
 import { forwardRef } from 'react';
 
-/**
- * SectionTitle Component
- * 
+/** 
  * @param {Object} props - Component props
  * @param {string} props.title - Main title text
  * @param {string} props.subtitle - Subtitle/description text
@@ -27,14 +24,13 @@ const SectionTitle = forwardRef(({
   underline = false,
   className = '',
 }, ref) => {
-  // Alignment styles
+  
   const alignments = {
     left: 'text-left items-start',
     center: 'text-center items-center',
     right: 'text-right items-end',
   };
 
-  // Size styles for title
   const titleSizes = {
     sm: 'text-2xl md:text-3xl',
     md: 'text-3xl md:text-4xl',
@@ -42,7 +38,6 @@ const SectionTitle = forwardRef(({
     xl: 'text-4xl md:text-5xl lg:text-6xl',
   };
 
-  // Size styles for subtitle
   const subtitleSizes = {
     sm: 'text-base md:text-lg',
     md: 'text-lg md:text-xl',
@@ -50,7 +45,6 @@ const SectionTitle = forwardRef(({
     xl: 'text-xl md:text-2xl',
   };
 
-  // Gradient text styles
   const gradientStyles = gradient
     ? 'bg-clip-text text-transparent bg-gradient-to-r from-primary-500 to-accent-500'
     : 'text-light-text-primary dark:text-dark-text-primary';
@@ -60,14 +54,13 @@ const SectionTitle = forwardRef(({
       ref={ref}
       className={`flex flex-col gap-4 mb-12 ${alignments[align]} ${className}`}
     >
-      {/* Badge */}
+
       {badge && (
         <div className="inline-flex">
           {badge}
         </div>
       )}
 
-      {/* Title with optional icon */}
       <div className="flex items-center gap-3">
         {icon && align === 'left' && (
           <div className="flex-shrink-0 text-primary-500">
@@ -86,14 +79,12 @@ const SectionTitle = forwardRef(({
         )}
       </div>
 
-      {/* Underline decoration */}
       {underline && (
         <div className={`h-1 w-20 bg-gradient-to-r from-primary-500 to-accent-500 rounded-full ${
           align === 'center' ? 'mx-auto' : align === 'right' ? 'ml-auto' : ''
         }`} />
       )}
 
-      {/* Subtitle */}
       {subtitle && (
         <p className={`
           ${subtitleSizes[size]} 
@@ -108,13 +99,8 @@ const SectionTitle = forwardRef(({
   );
 });
 
-// Display name for debugging
 SectionTitle.displayName = 'SectionTitle';
 
-/**
- * SectionHeader Component
- * Alternative header with number/step indicator
- */
 export const SectionHeader = ({ 
   number, 
   title, 
@@ -124,7 +110,7 @@ export const SectionHeader = ({
 }) => {
   return (
     <div className={`flex flex-col gap-4 mb-12 ${align === 'center' ? 'items-center text-center' : ''} ${className}`}>
-      {/* Number indicator */}
+      
       {number && (
         <div className="flex items-center gap-3">
           <span className="flex items-center justify-center w-12 h-12 rounded-full bg-primary-100 dark:bg-primary-900/30 text-primary-600 dark:text-primary-400 font-bold text-lg">
@@ -134,12 +120,10 @@ export const SectionHeader = ({
         </div>
       )}
 
-      {/* Title */}
       <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-light-text-primary dark:text-dark-text-primary">
         {title}
       </h2>
 
-      {/* Subtitle */}
       {subtitle && (
         <p className="text-lg md:text-xl text-light-text-secondary dark:text-dark-text-secondary max-w-2xl">
           {subtitle}
@@ -149,10 +133,6 @@ export const SectionHeader = ({
   );
 };
 
-/**
- * PageTitle Component
- * Large title for page headers
- */
 export const PageTitle = ({ 
   title, 
   subtitle, 
@@ -161,7 +141,7 @@ export const PageTitle = ({
 }) => {
   return (
     <div className={`mb-8 ${className}`}>
-      {/* Breadcrumbs */}
+      
       {breadcrumbs && (
         <nav className="flex items-center gap-2 text-sm mb-4 text-light-text-tertiary dark:text-dark-text-tertiary">
           {breadcrumbs.map((crumb, index) => (
@@ -175,12 +155,10 @@ export const PageTitle = ({
         </nav>
       )}
 
-      {/* Title */}
       <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-light-text-primary dark:text-dark-text-primary mb-4">
         {title}
       </h1>
 
-      {/* Subtitle */}
       {subtitle && (
         <p className="text-xl md:text-2xl text-light-text-secondary dark:text-dark-text-secondary max-w-3xl">
           {subtitle}
@@ -190,10 +168,6 @@ export const PageTitle = ({
   );
 };
 
-/**
- * CompactTitle Component
- * Smaller, inline title for cards or subsections
- */
 export const CompactTitle = ({ 
   title, 
   subtitle,
@@ -213,7 +187,6 @@ export const CompactTitle = ({
         )}
       </div>
 
-      {/* Optional action button/link */}
       {action && (
         <div className="flex-shrink-0">
           {action}
@@ -223,5 +196,4 @@ export const CompactTitle = ({
   );
 };
 
-// Export SectionTitle as default and variations as named exports
 export default SectionTitle;

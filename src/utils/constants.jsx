@@ -1,6 +1,3 @@
-// Global constants for the portfolio application
-
-// Personal information
 export const PERSONAL_INFO = {
   name: "Chizaram Chukwuka Anthony",
   title: "Full-Stack JavaScript Developer",
@@ -9,10 +6,9 @@ export const PERSONAL_INFO = {
   phone: "+234 912 186 4819",
   location: "Nnewi, Anambra State, Nigeria",
   availability: "Open to full-time roles and selective freelance projects",
-  resumeUrl: "/cv.pdf",
+  resumeUrl: "/Chizaram_Chukwuka_Resume.pdf",
 };
 
-// Navigation menu items
 export const NAV_ITEMS = [
   { id: "home", label: "Home", href: "#home" },
   { id: "about", label: "About", href: "#about" },
@@ -23,7 +19,6 @@ export const NAV_ITEMS = [
   { id: "contact", label: "Contact", href: "#contact" },
 ];
 
-// Project categories for filtering
 export const PROJECT_CATEGORIES = [
   { id: "all", label: "All Projects" },
   { id: "web-app", label: "Web Applications" },
@@ -31,7 +26,6 @@ export const PROJECT_CATEGORIES = [
   { id: "open-source", label: "Open Source" },
 ];
 
-// Tech stack categories
 export const TECH_CATEGORIES = {
   FRONTEND: "Frontend",
   TOOLS: "Tools & Workflow",
@@ -39,14 +33,12 @@ export const TECH_CATEGORIES = {
   LEARNING: "Learning",
 };
 
-// Experience types
 export const EXPERIENCE_TYPES = {
   WORK: "work",
   PROJECT: "project",
   FREELANCE: "freelance",
 };
 
-// Achievement types
 export const ACHIEVEMENT_TYPES = {
   CERTIFICATION: "certification",
   AWARD: "award",
@@ -54,7 +46,6 @@ export const ACHIEVEMENT_TYPES = {
   METRIC: "metric",
 };
 
-// Service categories
 export const SERVICES = [
   {
     id: "full-stack-product-development",
@@ -82,7 +73,6 @@ export const SERVICES = [
   },
 ];
 
-// Social media platforms
 export const SOCIAL_PLATFORMS = {
   GITHUB: "github",
   LINKEDIN: "linkedin",
@@ -91,7 +81,6 @@ export const SOCIAL_PLATFORMS = {
   WHATSAPP: "whatsapp",
 };
 
-// Contact form field names
 export const CONTACT_FORM_FIELDS = {
   NAME: "name",
   EMAIL: "email",
@@ -99,7 +88,6 @@ export const CONTACT_FORM_FIELDS = {
   MESSAGE: "message",
 };
 
-// Form validation messages
 export const VALIDATION_MESSAGES = {
   REQUIRED: "This field is required",
   INVALID_EMAIL: "Please enter a valid email address",
@@ -109,14 +97,12 @@ export const VALIDATION_MESSAGES = {
   ERROR: "Something went wrong. Please try again or contact me directly via email.",
 };
 
-// Animation durations (in milliseconds)
 export const ANIMATION_DURATION = {
   FAST: 200,
   NORMAL: 300,
   SLOW: 500,
 };
 
-// Breakpoints (matching Tailwind defaults)
 export const BREAKPOINTS = {
   SM: 640,
   MD: 768,
@@ -125,19 +111,16 @@ export const BREAKPOINTS = {
   "2XL": 1536,
 };
 
-// Theme modes
 export const THEME_MODES = {
   LIGHT: "light",
   DARK: "dark",
 };
 
-// Local storage keys
 export const STORAGE_KEYS = {
   THEME: "portfolio-theme",
   CONTACT_FORM: "portfolio-contact-form-draft",
 };
 
-// External links
 export const EXTERNAL_LINKS = {
   GITHUB_REPO: "https://github.com/chizzy250/portfolio",
   LINKEDIN: "https://www.linkedin.com/in/chizaram-chukwuka-b331b6222",
@@ -145,7 +128,6 @@ export const EXTERNAL_LINKS = {
   TWITTER: "https://twitter.com/chizaram250",
 };
 
-// EmailJS configuration (replace with your actual IDs after setup)
 export const EMAILJS_CONFIG = {
   SERVICE_ID: import.meta.env.VITE_EMAILJS_SERVICE_ID,
   TEMPLATE_ID:import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
@@ -162,7 +144,6 @@ export const SEO_CONFIG = {
   twitterHandle: "@Chizaram250",
 };
 
-// Skills proficiency levels
 export const PROFICIENCY_LEVELS = {
   EXPERT: "expert",
   ADVANCED: "advanced",
@@ -170,7 +151,6 @@ export const PROFICIENCY_LEVELS = {
   BEGINNER: "beginner",
 };
 
-// Status indicators
 export const STATUS = {
   IDLE: "idle",
   LOADING: "loading",
@@ -178,10 +158,8 @@ export const STATUS = {
   ERROR: "error",
 };
 
-// Scroll offset for smooth scrolling to sections (navbar height)
 export const SCROLL_OFFSET = 80;
 
-// Default values
 export const DEFAULTS = {
   ITEMS_PER_PAGE: 6,
   DEBOUNCE_DELAY: 300,

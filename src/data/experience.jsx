@@ -99,32 +99,6 @@ export const experience = [
     companyUrl: null,
     companyLogo: null,
   },
-
-  /** {
-    id: 'internship-placeholder',
-    type: 'work',
-    title: 'Frontend Developer Intern',
-    company: 'Tech Company Name',
-    location: 'Location',
-    locationType: 'Remote',
-    startDate: '2025-03',
-    endDate: '2025-06',
-    current: false,
-    description: 'Internship position - replace this with actual internship details when you have them.',
-    responsibilities: [
-      'Assisted in building web applications',
-      'Collaborated with senior developers',
-      'Fixed bugs and implemented new features',
-      'Participated in code reviews',
-    ],
-    techStack: ['React', 'TypeScript', 'Tailwind CSS'],
-    highlights: [
-      'Contributed to production codebase',
-      'Learned industry best practices',
-    ],
-    companyUrl: '',
-    companyLogo: null,
-  }, */
 ];
 
 export const experienceByType = {

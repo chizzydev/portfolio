@@ -1,10 +1,7 @@
-// Main App component - Portfolio application root
 import { useEffect, useState } from 'react';
 
-// Layout components
 import Navbar from './components/layout/Navbar';
 
-// Section components
 import Hero from './components/sections/Hero';
 import About from './components/sections/About';
 import TechStack from './components/sections/TechStack';
@@ -15,13 +12,10 @@ import Achievements from './components/sections/Achievements';
 //import Testimonials from './components/sections/Testimonials';
 import Contact from './components/sections/Contact';
 
-// Common components
 import ScrollToTop from './components/common/ScrollToTop';
 
 function App() {
-  // Theme state management (dark/light mode)
   const [theme, setTheme] = useState(() => {
-    // Check localStorage first, then system preference
     const savedTheme = localStorage.getItem('portfolio-theme');
     if (savedTheme) return savedTheme;
     
@@ -30,7 +24,6 @@ function App() {
       : 'dark';
   });
 
-  // Apply theme to document
   useEffect(() => {
     const root = document.documentElement;
     
@@ -40,24 +33,17 @@ function App() {
       root.classList.remove('dark');
     }
     
-    // Save to localStorage
     localStorage.setItem('portfolio-theme', theme);
   }, [theme]);
 
-  // Toggle theme function
   const toggleTheme = () => {
     setTheme(prevTheme => prevTheme === 'dark' ? 'light' : 'dark');
   };
 
   return (
     <div className="min-h-screen bg-light-bg dark:bg-dark-bg transition-colors duration-300">
-      {/* Navigation */}
       <Navbar theme={theme} toggleTheme={toggleTheme} />
-
-      {/* Main Content */}
      <main className="pt-20">
-        {/* Hero Section - Landing page */}
-
 <section id="home" className="section-hero">
   <Hero />
 </section>
@@ -95,8 +81,6 @@ function App() {
 </section>
 
       </main>
-
-      {/* Scroll to Top Button */}
       <ScrollToTop />
     </div>
   );

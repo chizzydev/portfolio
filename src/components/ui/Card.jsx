@@ -1,9 +1,6 @@
-// Reusable Card component for content containers
 import { forwardRef } from 'react';
 
-/**
- * Card Component
- * 
+/** 
  * @param {Object} props - Component props
  * @param {string} props.variant - Card style variant (default, bordered, elevated, flat)
  * @param {boolean} props.hoverable - Whether card has hover effect
@@ -24,10 +21,9 @@ const Card = forwardRef(({
   onClick,
   ...props
 }, ref) => {
-  // Base styles (always applied)
+
   const baseStyles = 'rounded-xl transition-all duration-300';
 
-  // Variant styles
   const variants = {
     default: 'bg-light-card dark:bg-dark-card border border-light-border dark:border-dark-border shadow-card-light dark:shadow-card-dark',
     bordered: 'bg-light-card dark:bg-dark-card border-2 border-primary-200 dark:border-primary-800',
@@ -36,17 +32,14 @@ const Card = forwardRef(({
     glass: 'backdrop-blur-lg bg-white/80 dark:bg-black/80 border border-white/20 dark:border-white/10',
   };
 
-  // Hover effect styles
   const hoverStyles = hoverable 
     ? 'hover:shadow-lg dark:hover:shadow-xl hover:-translate-y-1' 
     : '';
 
-  // Clickable styles
   const clickableStyles = clickable 
     ? 'cursor-pointer active:scale-[0.99]' 
     : '';
 
-  // Padding styles
   const paddings = {
     none: 'p-0',
     sm: 'p-4',
@@ -54,7 +47,6 @@ const Card = forwardRef(({
     lg: 'p-8',
   };
 
-  // Combine all styles
   const cardStyles = `
     ${baseStyles}
     ${variants[variant]}
@@ -64,7 +56,6 @@ const Card = forwardRef(({
     ${className}
   `.trim().replace(/\s+/g, ' ');
 
-  // Handle click
   const handleClick = (e) => {
     if (onClick) onClick(e);
   };
@@ -89,13 +80,8 @@ const Card = forwardRef(({
   );
 });
 
-// Display name for debugging
 Card.displayName = 'Card';
 
-/**
- * CardHeader Component
- * Optional header section for the card
- */
 export const CardHeader = ({ children, className = '' }) => {
   return (
     <div className={`mb-4 ${className}`}>
@@ -104,10 +90,6 @@ export const CardHeader = ({ children, className = '' }) => {
   );
 };
 
-/**
- * CardTitle Component
- * Title for the card
- */
 export const CardTitle = ({ children, className = '' }) => {
   return (
     <h3 className={`text-xl md:text-2xl font-bold text-light-text-primary dark:text-dark-text-primary ${className}`}>
@@ -116,10 +98,6 @@ export const CardTitle = ({ children, className = '' }) => {
   );
 };
 
-/**
- * CardDescription Component
- * Description text for the card
- */
 export const CardDescription = ({ children, className = '' }) => {
   return (
     <p className={`text-sm md:text-base text-light-text-secondary dark:text-dark-text-secondary ${className}`}>
@@ -128,10 +106,6 @@ export const CardDescription = ({ children, className = '' }) => {
   );
 };
 
-/**
- * CardContent Component
- * Main content area of the card
- */
 export const CardContent = ({ children, className = '' }) => {
   return (
     <div className={className}>
@@ -140,10 +114,6 @@ export const CardContent = ({ children, className = '' }) => {
   );
 };
 
-/**
- * CardFooter Component
- * Footer section of the card
- */
 export const CardFooter = ({ children, className = '' }) => {
   return (
     <div className={`mt-4 pt-4 border-t border-light-border dark:border-dark-border ${className}`}>
@@ -152,10 +122,6 @@ export const CardFooter = ({ children, className = '' }) => {
   );
 };
 
-/**
- * CardImage Component
- * Image section for the card
- */
 export const CardImage = ({ src, alt, className = '' }) => {
   return (
     <div className={`-mx-6 -mt-6 mb-4 overflow-hidden rounded-t-xl ${className}`}>
@@ -168,5 +134,4 @@ export const CardImage = ({ src, alt, className = '' }) => {
   );
 };
 
-// Export Card as default and sub-components as named exports
 export default Card;

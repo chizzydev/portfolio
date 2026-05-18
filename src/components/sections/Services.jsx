@@ -1,4 +1,3 @@
-// Services section - What you offer
 import { Code2, Palette, Blocks, Layout, ArrowRight } from 'lucide-react';
 import SectionTitle from '../ui/SectionTitle';
 import Card, { CardTitle, CardDescription } from '../ui/Card';
@@ -32,7 +31,6 @@ const Services = () => {
           />
         </AnimatedSection>
 
-        {/* ✅ Services Grid */}
         <div className="max-w-6xl mx-auto mt-12">
           <StaggeredList staggerDelay={150}>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8">
@@ -46,11 +44,11 @@ const Services = () => {
                     hoverable
                     className="group relative overflow-hidden w-full"
                   >
-                    {/* Decorative background */}
+                    
                     <div className="absolute -top-24 -right-24 w-48 h-48 bg-gradient-to-br from-primary-500/10 to-accent-500/10 rounded-full blur-3xl group-hover:scale-150 transition-transform duration-500" />
 
                     <div className="relative p-6 space-y-4">
-                      {/* Icon + Number */}
+                     
                       <div className="relative">
                         <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-primary-500 to-accent-500 flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
                           <Icon className="w-8 h-8 text-white" />
@@ -61,17 +59,14 @@ const Services = () => {
                         </div>
                       </div>
 
-                      {/* Title */}
                       <CardTitle className="group-hover:text-primary-500 transition-colors">
                         {service.title}
                       </CardTitle>
 
-                      {/* Description */}
                       <CardDescription className="leading-relaxed text-sm sm:text-base">
                         {service.description}
                       </CardDescription>
 
-                      {/* CTA */}
                       <div className="pt-4">
                         <button
                           onClick={scrollToContact}

@@ -1,4 +1,3 @@
-// Achievements section - Certifications and accomplishments
 import { useState } from 'react';
 import { Award, Trophy, GitPullRequest, TrendingUp, ExternalLink, Calendar } from 'lucide-react';
 import SectionTitle from '../ui/SectionTitle';

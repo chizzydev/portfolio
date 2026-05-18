@@ -1,6 +1,3 @@
-// Social media links and contact information
-// Edit these with your actual social media profiles
-
 import { 
   Github, 
   Linkedin, 
@@ -13,18 +10,6 @@ import {
   Youtube,
   MessageCircle
 } from 'lucide-react';
-
-/**
- * Social media links configuration
- * Each item includes:
- * - id: Unique identifier
- * - name: Platform name
- * - icon: Lucide React icon component
- * - url: Your profile URL
- * - username: Your username/handle (optional, for display)
- * - color: Brand color for hover effects
- * - show: Whether to display this link (true/false)
- */
 
 export const socialLinks = [
   {
@@ -58,7 +43,7 @@ export const socialLinks = [
     id: 'whatsapp',
     name: 'WhatsApp',
     icon: MessageCircle,
-    url: 'https://wa.me/2349121864819', // Replace with your WhatsApp number
+    url: 'https://wa.me/2349121864819', 
     username: '+234 912 186 4819',
     color: '#25D366',
     show: true,
@@ -70,7 +55,7 @@ export const socialLinks = [
     url: 'https://instagram.com/Chizzyy250',
     username: '@Chizzyy250',
     color: '#E4405F',
-    show: false, // Set to true if you want to display
+    show: true, 
   },
   {
     id: 'facebook',
@@ -79,7 +64,7 @@ export const socialLinks = [
     url: 'https://facebook.com/chizaram.chukwuka',
     username: 'Chizaram Chukwuka',
     color: '#1877F2',
-    show: false, // Set to true if you want to display
+    show: true, 
   },
   {
     id: 'youtube',
@@ -88,14 +73,10 @@ export const socialLinks = [
     url: '',
     username: '',
     color: '#FF0000',
-    show: false, // Set to true if you want to display
+    show: false,
   },
 ];
 
-/**
- * Contact information
- * Used in Contact section and Footer
- */
 export const contactInfo = [
   {
     id: 'email',
@@ -104,7 +85,7 @@ export const contactInfo = [
     value: 'chukwukachizaram150@gmail.com',
     href: 'mailto:chukwukachizaram150@gmail.com',
     display: 'chukwukachizaram150@gmail.com',
-    copyable: true, // Can be copied to clipboard
+    copyable: true,
   },
   {
     id: 'phone',
@@ -120,16 +101,12 @@ export const contactInfo = [
     name: 'Location',
     icon: MapPin,
     value: 'Nnewi, Anambra State, Nigeria',
-    href: null, // No link for location
+    href: null,
     display: 'Nnewi, Nigeria',
     copyable: false,
   },
 ];
 
-/**
- * Quick contact actions
- * Primary CTAs for getting in touch
- */
 export const quickContactActions = [
   {
     id: 'email-cta',
@@ -157,25 +134,14 @@ export const quickContactActions = [
   },
 ];
 
-/**
- * Footer social links (subset of main social links)
- * Only shows platforms where show: true
- */
 export const footerSocialLinks = socialLinks.filter(link => link.show);
 
-/**
- * Resume/CV download link
- */
 export const resumeLink = {
   label: 'Download Resume',
-  url: '/cv.pdf',
+  url: '/Chizaram_Chukwuka_Resume.pdf',
   fileName: 'Chizaram_Chukwuka_Resume.pdf',
 };
 
-/**
- * Availability status
- * Shows if you're available for work
- */
 export const availability = {
   status: 'available', // 'available', 'busy', 'unavailable'
   message: 'Open to full-time roles and selective freelance projects',
@@ -192,7 +158,6 @@ export const availability = {
 };
 
 /**
- * Helper function to get social link by ID
  * @param {string} id - Social platform ID
  * @returns {Object|null} Social link object or null
  */
@@ -201,7 +166,6 @@ export const getSocialLinkById = (id) => {
 };
 
 /**
- * Helper function to get contact info by ID
  * @param {string} id - Contact info ID
  * @returns {Object|null} Contact info object or null
  */
@@ -210,7 +174,6 @@ export const getContactById = (id) => {
 };
 
 /**
- * Helper function to get all visible social links
  * @returns {Array} Array of visible social links
  */
 export const getVisibleSocialLinks = () => {

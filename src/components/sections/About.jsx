@@ -1,4 +1,3 @@
-// About section - Personal introduction and story
 import { Code2, Rocket, Target, Award } from 'lucide-react';
 import SectionTitle from '../ui/SectionTitle';
 import Card from '../ui/Card';

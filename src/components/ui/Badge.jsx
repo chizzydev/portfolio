@@ -1,9 +1,6 @@
-// Reusable Badge component for tech stack, tags, and status indicators
 import { forwardRef } from 'react';
 
 /**
- * Badge Component
- * 
  * @param {Object} props - Component props
  * @param {string} props.variant - Badge style variant (primary, secondary, success, warning, danger, info, outline)
  * @param {string} props.size - Badge size (sm, md, lg)
@@ -22,10 +19,9 @@ const Badge = forwardRef(({
   className = '',
   ...props
 }, ref) => {
-  // Base styles (always applied)
+  
   const baseStyles = 'inline-flex items-center gap-1.5 font-medium rounded-full transition-all duration-200';
 
-  // Variant styles
   const variants = {
     primary: 'bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 border border-primary-200 dark:border-primary-800',
     secondary: 'bg-accent-100 dark:bg-accent-900/30 text-accent-700 dark:text-accent-300 border border-accent-200 dark:border-accent-800',
@@ -37,14 +33,12 @@ const Badge = forwardRef(({
     gray: 'bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 border border-gray-200 dark:border-gray-700',
   };
 
-  // Size styles
   const sizes = {
     sm: 'px-2 py-0.5 text-xs',
     md: 'px-3 py-1.5 text-sm',
     lg: 'px-4 py-2 text-base',
   };
 
-  // Dot indicator colors based on variant
   const dotColors = {
     primary: 'bg-primary-500',
     secondary: 'bg-accent-500',
@@ -56,21 +50,18 @@ const Badge = forwardRef(({
     gray: 'bg-gray-500',
   };
 
-  // Icon size based on badge size
   const iconSizes = {
     sm: 'w-3 h-3',
     md: 'w-4 h-4',
     lg: 'w-5 h-5',
   };
 
-  // Dot size based on badge size
   const dotSizes = {
     sm: 'w-1.5 h-1.5',
     md: 'w-2 h-2',
     lg: 'w-2.5 h-2.5',
   };
 
-  // Combine all styles
   const badgeStyles = `
     ${baseStyles}
     ${variants[variant]}
@@ -84,7 +75,7 @@ const Badge = forwardRef(({
       className={badgeStyles}
       {...props}
     >
-      {/* Dot Indicator */}
+      
       {dot && (
         <span 
           className={`rounded-full ${dotSizes[size]} ${dotColors[variant]} animate-pulse`}
@@ -92,14 +83,12 @@ const Badge = forwardRef(({
         />
       )}
 
-      {/* Icon */}
       {icon && (
         <span className={`flex-shrink-0 ${iconSizes[size]}`}>
           {icon}
         </span>
       )}
 
-      {/* Badge Text */}
       {children && (
         <span className="whitespace-nowrap">
           {children}
@@ -109,13 +98,8 @@ const Badge = forwardRef(({
   );
 });
 
-// Display name for debugging
 Badge.displayName = 'Badge';
 
-/**
- * TechBadge Component
- * Specialized badge for tech stack items
- */
 export const TechBadge = ({ tech, color, icon, className = '' }) => {
   return (
     <Badge 
@@ -134,10 +118,6 @@ export const TechBadge = ({ tech, color, icon, className = '' }) => {
   );
 };
 
-/**
- * StatusBadge Component
- * Badge for status indicators
- */
 export const StatusBadge = ({ status, className = '' }) => {
   const statusVariants = {
     available: { variant: 'success', text: 'Available', dot: true },
@@ -162,10 +142,6 @@ export const StatusBadge = ({ status, className = '' }) => {
   );
 };
 
-/**
- * CategoryBadge Component
- * Badge for project/content categories
- */
 export const CategoryBadge = ({ category, className = '' }) => {
   const categoryVariants = {
     'web-app': { variant: 'primary', text: 'Web App' },
@@ -190,10 +166,6 @@ export const CategoryBadge = ({ category, className = '' }) => {
   );
 };
 
-/**
- * CountBadge Component
- * Badge for displaying counts (e.g., notification badges)
- */
 export const CountBadge = ({ count, max = 99, variant = 'danger', className = '' }) => {
   const displayCount = count > max ? `${max}+` : count;
 
@@ -208,5 +180,4 @@ export const CountBadge = ({ count, max = 99, variant = 'danger', className = ''
   );
 };
 
-// Export Badge as default and specialized badges as named exports
 export default Badge;

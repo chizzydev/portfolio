@@ -1,7 +1,4 @@
-// Utility helper functions for the portfolio application
-
 /**
- * Formats a date string into a readable format
  * @param {string} dateString - ISO date string
  * @param {string} format - Format type ('short', 'long', 'month-year')
  * @returns {string} Formatted date
@@ -19,7 +16,6 @@ export const formatDate = (dateString, format = 'long') => {
 };
 
 /**
- * Calculates duration between two dates
  * @param {string} startDate - Start date string
  * @param {string} endDate - End date string (or 'Present')
  * @returns {string} Duration string (e.g., "2 years 3 months")
@@ -46,7 +42,6 @@ export const calculateDuration = (startDate, endDate) => {
 };
 
 /**
- * Truncates text to a specified length with ellipsis
  * @param {string} text - Text to truncate
  * @param {number} maxLength - Maximum length
  * @returns {string} Truncated text
@@ -57,7 +52,6 @@ export const truncateText = (text, maxLength = 100) => {
 };
 
 /**
- * Generates a slug from a string (URL-friendly)
  * @param {string} text - Text to convert to slug
  * @returns {string} Slug string
  */
@@ -71,7 +65,6 @@ export const generateSlug = (text) => {
 };
 
 /**
- * Debounce function to limit function calls
  * @param {Function} func - Function to debounce
  * @param {number} delay - Delay in milliseconds
  * @returns {Function} Debounced function
@@ -85,7 +78,6 @@ export const debounce = (func, delay = 300) => {
 };
 
 /**
- * Throttle function to limit function execution rate
  * @param {Function} func - Function to throttle
  * @param {number} limit - Time limit in milliseconds
  * @returns {Function} Throttled function
@@ -102,7 +94,6 @@ export const throttle = (func, limit = 200) => {
 };
 
 /**
- * Scrolls smoothly to an element
  * @param {string} elementId - ID of the element to scroll to
  * @param {number} offset - Offset from top (for fixed headers)
  */
@@ -120,7 +111,6 @@ export const scrollToElement = (elementId, offset = 80) => {
 };
 
 /**
- * Checks if element is in viewport
  * @param {HTMLElement} element - Element to check
  * @returns {boolean} True if element is in viewport
  */
@@ -135,7 +125,6 @@ export const isInViewport = (element) => {
 };
 
 /**
- * Copies text to clipboard
  * @param {string} text - Text to copy
  * @returns {Promise<boolean>} Success status
  */
@@ -144,7 +133,7 @@ export const copyToClipboard = async (text) => {
     await navigator.clipboard.writeText(text);
     return true;
   } catch {
-    // Fallback for older browsers
+    
     const textArea = document.createElement('textarea');
     textArea.value = text;
     textArea.style.position = 'fixed';
@@ -164,7 +153,6 @@ export const copyToClipboard = async (text) => {
 };
 
 /**
- * Formats a number with commas (e.g., 1000 -> 1,000)
  * @param {number} num - Number to format
  * @returns {string} Formatted number
  */
@@ -173,7 +161,6 @@ export const formatNumber = (num) => {
 };
 
 /**
- * Generates initials from a name
  * @param {string} name - Full name
  * @returns {string} Initials (e.g., "John Doe" -> "JD")
  */
@@ -187,7 +174,6 @@ export const getInitials = (name) => {
 };
 
 /**
- * Checks if device is mobile
  * @returns {boolean} True if mobile device
  */
 export const isMobileDevice = () => {
@@ -197,7 +183,6 @@ export const isMobileDevice = () => {
 };
 
 /**
- * Gets current theme from system preference
  * @returns {string} 'light' or 'dark'
  */
 export const getSystemTheme = () => {
@@ -207,7 +192,6 @@ export const getSystemTheme = () => {
 };
 
 /**
- * Sanitizes user input to prevent XSS
  * @param {string} input - User input string
  * @returns {string} Sanitized string
  */
@@ -218,7 +202,6 @@ export const sanitizeInput = (input) => {
 };
 
 /**
- * Groups array of objects by a key
  * @param {Array} array - Array to group
  * @param {string} key - Key to group by
  * @returns {Object} Grouped object
@@ -235,7 +218,6 @@ export const groupBy = (array, key) => {
 };
 
 /**
- * Sorts array of objects by a key
  * @param {Array} array - Array to sort
  * @param {string} key - Key to sort by
  * @param {string} order - 'asc' or 'desc'
@@ -250,7 +232,6 @@ export const sortBy = (array, key, order = 'asc') => {
 };
 
 /**
- * Filters array by search term across multiple keys
  * @param {Array} array - Array to filter
  * @param {string} searchTerm - Search term
  * @param {Array} keys - Keys to search in
@@ -266,7 +247,6 @@ export const filterBySearch = (array, searchTerm, keys) => {
 };
 
 /**
- * Generates a random ID
  * @returns {string} Random ID
  */
 export const generateId = () => {
@@ -274,7 +254,6 @@ export const generateId = () => {
 };
 
 /**
- * Delays execution (useful for async operations)
  * @param {number} ms - Milliseconds to delay
  * @returns {Promise} Promise that resolves after delay
  */
@@ -283,7 +262,6 @@ export const delay = (ms) => {
 };
 
 /**
- * Checks if string is a valid URL
  * @param {string} string - String to check
  * @returns {boolean} True if valid URL
  */
@@ -297,7 +275,6 @@ export const isValidUrl = (string) => {
 };
 
 /**
- * Gets file extension from filename
  * @param {string} filename - Filename
  * @returns {string} File extension
  */
@@ -306,7 +283,6 @@ export const getFileExtension = (filename) => {
 };
 
 /**
- * Converts bytes to human-readable format
  * @param {number} bytes - Bytes
  * @param {number} decimals - Decimal places
  * @returns {string} Formatted string (e.g., "1.5 MB")

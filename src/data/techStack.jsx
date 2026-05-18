@@ -196,9 +196,6 @@ export const techStack = [
   },
 ];
 
-/**
- * Tech stack organized by categories
- */
 export const techStackByCategory = {
   Frontend: techStack.filter(tech => tech.category === 'Frontend'),
   Tools: techStack.filter(tech => tech.category === 'Tools'),
@@ -206,9 +203,6 @@ export const techStackByCategory = {
   Learning: techStack.filter(tech => tech.category === 'Learning'),
 };
 
-/**
- * Category information with descriptions
- */
 export const categoryInfo = {
   Frontend: {
     title: 'Frontend Development',
@@ -232,9 +226,6 @@ export const categoryInfo = {
   },
 };
 
-/**
- * Featured technologies (shown prominently)
- */
 export const featuredTech = [
   'react',
   'javascript',
@@ -247,9 +238,6 @@ export const featuredTech = [
   'tailwind'
 ];
 
-/**
- * Proficiency level information
- */
 export const proficiencyLevels = {
   expert: {
     label: 'Expert',
@@ -278,7 +266,6 @@ export const proficiencyLevels = {
 };
 
 /**
- * Helper function to get tech by ID
  * @param {string} id - Tech ID
  * @returns {Object|null} Tech object or null
  */
@@ -287,7 +274,6 @@ export const getTechById = (id) => {
 };
 
 /**
- * Helper function to get techs by category
  * @param {string} category - Category name
  * @returns {Array} Array of tech items in category
  */
@@ -296,7 +282,6 @@ export const getTechsByCategory = (category) => {
 };
 
 /**
- * Helper function to get techs by proficiency level
  * @param {string} proficiency - Proficiency level
  * @returns {Array} Array of tech items at proficiency level
  */
@@ -305,16 +290,12 @@ export const getTechsByProficiency = (proficiency) => {
 };
 
 /**
- * Helper function to get featured technologies
  * @returns {Array} Array of featured tech items
  */
 export const getFeaturedTech = () => {
   return techStack.filter(tech => featuredTech.includes(tech.id));
 };
 
-/**
- * Tech stack statistics
- */
 export const techStackStats = {
   total: techStack.length,
   byCategory: {

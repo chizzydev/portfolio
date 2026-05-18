@@ -1,4 +1,3 @@
-// Experience section - Work history and timeline
 import { useState } from 'react';
 import { Briefcase, Users, Code2, GraduationCap, MapPin, Calendar, ExternalLink, ArrowRight, Check } from 'lucide-react';
 import SectionTitle from '../ui/SectionTitle';
