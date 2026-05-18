@@ -100,7 +100,7 @@ const useContactForm = (onSubmit, initialValues = {}) => {
       // Success
       setSubmitStatus('success');
       resetForm();
-    } catch (error) {
+    } catch {
       // Error
       setSubmitStatus('error');
     } finally {

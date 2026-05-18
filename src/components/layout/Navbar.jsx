@@ -103,7 +103,6 @@ const Navbar = ({ theme, toggleTheme }) => {
     if (!touchStart || !touchEnd) return;
     
     const distance = touchStart - touchEnd;
-    const isLeftSwipe = distance > minSwipeDistance;
     const isRightSwipe = distance < -minSwipeDistance;
     
     // Close menu on right swipe

@@ -252,7 +252,7 @@ const Projects = () => {
         <Modal
           isOpen
           onClose={() => setSelectedProject(null)}
-          size="xl"
+          size="2xl"
           title={selectedProject.title}
         >
           <ModalBody>
@@ -288,13 +288,33 @@ const Projects = () => {
               {selectedProject.longDescription || selectedProject.description}
             </p>
 
+            {selectedProject.impact?.length > 0 && (
+              <div className="space-y-3 pt-2">
+                <h4 className="text-lg font-semibold text-light-text-primary dark:text-dark-text-primary">
+                  Impact and scope
+                </h4>
+                <div className="grid gap-3 sm:grid-cols-2">
+                  {selectedProject.impact.map((item, index) => (
+                    <div
+                      key={index}
+                      className="rounded-xl border border-primary-100 bg-primary-50/70 p-4 dark:border-primary-900/50 dark:bg-primary-950/20"
+                    >
+                      <p className="text-sm text-light-text-secondary dark:text-dark-text-secondary leading-relaxed">
+                        {item}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
             {selectedProject.features?.length > 0 && (
               <div className="space-y-3 pt-2">
                 <h4 className="text-lg font-semibold text-light-text-primary dark:text-dark-text-primary">
                   Product highlights
                 </h4>
                 <div className="grid gap-3 sm:grid-cols-2">
-                  {selectedProject.features.slice(0, 6).map((feature, index) => (
+                  {selectedProject.features.map((feature, index) => (
                     <div
                       key={index}
                       className="rounded-xl border border-light-border dark:border-dark-border bg-light-bg/60 dark:bg-dark-bg/40 p-4"
@@ -319,7 +339,7 @@ const Projects = () => {
                   Notable challenges solved
                 </h4>
                 <div className="space-y-3">
-                  {selectedProject.challenges.slice(0, 3).map((challenge, index) => (
+                  {selectedProject.challenges.map((challenge, index) => (
                     <div
                       key={index}
                       className="rounded-xl border border-light-border dark:border-dark-border bg-light-bg/60 dark:bg-dark-bg/40 p-4"

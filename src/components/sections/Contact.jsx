@@ -7,7 +7,7 @@ import Input from '../ui/Input';
 import Textarea from '../ui/Textarea';
 import Button from '../ui/Button';
 import AnimatedSection from '../common/AnimatedSection';
-import { contactInfo, footerSocialLinks } from '../../data/social';
+import { contactInfo } from '../../data/social';
 import { PERSONAL_INFO } from '../../utils/constants';
 import { validateContactForm } from '../../utils/validators';
 import { sanitizeInput } from '../../utils/helpers';

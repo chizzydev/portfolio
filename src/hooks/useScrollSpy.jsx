@@ -77,8 +77,6 @@ const useScrollSpy = (sectionIds, options = {}) => {
  */
 export const useScrollSpyAdvanced = (sectionIds, options = {}) => {
   const {
-    offset = 100,
-    throttleMs = 100,
     rootMargin = '0px',
     threshold = 0.5,
   } = options;
