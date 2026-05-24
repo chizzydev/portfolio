@@ -68,7 +68,7 @@ const Hero = () => {
             </p>
 
             <p className="text-sm md:text-base text-light-text-tertiary dark:text-dark-text-tertiary max-w-3xl mx-auto leading-relaxed">
-              Currently building Decide, a phone intelligence platform spanning website, backend APIs, and Android app delivery.
+              Currently building ProofCairn, a live trust and market-intelligence platform, and Decide, a phone-buying intelligence product for safer purchase decisions.
             </p>
 
             <div className="flex flex-wrap items-center justify-center gap-3 pt-4">

@@ -1,7 +1,7 @@
 export const PERSONAL_INFO = {
   name: "Chizaram Chukwuka Anthony",
-  title: "Full-Stack JavaScript Developer",
-  tagline: "Building production web, mobile, and backend products that solve real business problems.",
+  title: "Product Engineer",
+  tagline: "Building AI-assisted trust, security, market intelligence, and decision-support products.",
   email: "chukwukachizaram150@gmail.com",
   phone: "+234 912 186 4819",
   location: "Nnewi, Anambra State, Nigeria",
@@ -136,9 +136,9 @@ export const EMAILJS_CONFIG = {
 
 // SEO metadata
 export const SEO_CONFIG = {
-  title: "Chukwuka Chizaram Anthony | Full-Stack JavaScript Developer",
-  description: "Full-stack JavaScript developer building production web, mobile, and backend products with React, Next.js, Node.js, PostgreSQL, and modern product engineering workflows.",
-  keywords: "Full-Stack JavaScript Developer, Node.js Developer, Next.js Developer, React Developer, Web Developer, Mobile App Developer, Backend Developer, PostgreSQL, Tailwind CSS",
+  title: "Chukwuka Chizaram Anthony | Product Engineer",
+  description: "Product engineer building AI-assisted trust, security, market intelligence, and decision-support products with React, Next.js, Node.js, PostgreSQL, Supabase, and modern product engineering workflows.",
+  keywords: "Product Engineer, Full-Stack JavaScript Developer, AI Data Reviewer, Next.js Developer, React Developer, Web Developer, Mobile App Developer, Backend Developer, PostgreSQL, Supabase, Technical Writing, UI Analysis",
   author: "Chukwuka Chizaram Anthony",
   ogImage: "/og-image.png",
   twitterHandle: "@Chizaram250",
